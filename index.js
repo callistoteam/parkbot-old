@@ -7,6 +7,7 @@ const music = require('./music')
 const yt = require('simple-youtube-api')
 const youtube = require('yt-search')
 const prefix = config.prefix
+const lang = require("./lang/kr")
 
 module.exports = class extends BaseCluster {
     launch() {
@@ -28,7 +29,7 @@ module.exports = class extends BaseCluster {
 
         client.on('ready', () => {
             console.log(client.user.tag)
-            client.user.setActivity(`${prefix}도움말 | 디스코드를 흥겹게!`)
+            client.user.setActivity(lang.index.activity)
         })
 
         client.on("guildCreate", guild => {
@@ -73,7 +74,7 @@ module.exports = class extends BaseCluster {
                 }
 
                 if (message.member.voice.channel) music.create(message.guild.id, message.member.voice.channel, message)
-                command.run(client, music, message, embed, youtube, args);
+                command.run(client, music, message, embed, youtube, args, lang);
             }
         });
 
