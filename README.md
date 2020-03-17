@@ -14,4 +14,9 @@
 
 1. `node sharder.js`(Run `sharder` unconditionally)
 
-The README.md file is not yet completed.
+## Contact
+Discord: `Yoru#0002`
+Mail: [Click here](mailto:yoru@outlook.kr)
+
+### Developer
+[Yoru](https://yoru.pe.kr)
