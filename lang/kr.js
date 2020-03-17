@@ -1,5 +1,8 @@
 const { prefix, displayname } = require("../config")
 module.exports = {
+  handlers: {
+    fail: `❌  -> name이 존재하지 않습니다(또는 string타입이 아닙니다)`
+  },
   index: {
     activity: `${prefix}도움말 | 디스코드를 흥겹게!`
   },

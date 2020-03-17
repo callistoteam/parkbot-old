@@ -1,6 +1,7 @@
 const { readdirSync } = require("fs");
 
 const ascii = require("ascii-table");
+const lang = require("../lang/kr")
 
 let table = new ascii("Commands");
 table.setHeading("Command", "Load status");
@@ -16,7 +17,7 @@ module.exports = (client) => {
                 client.commands.set(pull.name, pull);
                 table.addRow(file, '✅');
             } else {
-                table.addRow(file, `❌  -> missing a help.name, or help.name is not a string.`);
+                table.addRow(file, lang.handlers.fail);
                 continue;
             }
     
