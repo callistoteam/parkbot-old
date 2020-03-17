@@ -12,7 +12,8 @@
 | discord.js | 12.0.2 | 12.0.2 |
 | node-opus | 0.3.3 | 0.3.3 |
 
-1. `node sharder.js`(Run `sharder` unconditionally)
+1. rename `config.example.js` to `config.js` and edit `config.js`
+2. `node sharder.js`(Run `sharder` unconditionally)
 
 ## Contact
 Discord: `Yoru#0002`
