@@ -12,4 +12,6 @@
 | discord.js | 12.0.2 | 12.0.2 |
 | node-opus | 0.3.3 | 0.3.3 |
 
+1. `node sharder.js`(Run `sharder` unconditionally)
+
 The README.md file is not yet completed.
