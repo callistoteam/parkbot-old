@@ -1,5 +1,6 @@
 const { RichEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
+const lang = require("../../lang/kr")
 
 module.exports = {
     name: "help",
@@ -31,7 +32,7 @@ function getAll(client, message) {
         .map(cat => stripIndents`**${cat[0].toUpperCase() + cat.slice(1)}** \n${commands(cat)}`)
         .reduce((string, category) => string + "\n" + category);
 
-    return message.channel.send(embed.setDescription(info).setFooter('`#help [커맨드이름]`으로 설명을 확인하세요'));
+    return message.channel.send(embed.setDescription(info).setFooter(lang.commands.help.description));
 }
 
 function getCMD(client, message, input) {

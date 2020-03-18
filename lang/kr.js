@@ -15,6 +15,8 @@ module.exports = {
       pprg: `${displayname}의 핑 상태 : 정상`,
       pprb: `${displayname}의 핑 상태 : 비정상`
     }, 
-    
+    help: {
+        description: '`#help [커맨드이름]`으로 설명을 확인하세요'
+      },
   }
 }
