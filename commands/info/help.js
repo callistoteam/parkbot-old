@@ -51,7 +51,7 @@ function getCMD(client, message, input) {
     if (cmd.description) info += `\n:pencil: 설명: ${cmd.description}`;
     if (cmd.usage) {
         info += `\n:bulb: 사용방법: ${cmd.usage}`;
-        embed.setFooter(`Syntax: <> = 꼭 필요함, [] = 옵션`);
+        embed.setFooter(lang.commands.help.syntax);
     }
 
     return message.channel.send(embed.setColor("GREEN").setDescription(info));

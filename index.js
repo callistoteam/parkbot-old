@@ -70,7 +70,7 @@ module.exports = class extends BaseCluster {
                 const article = fs.readFileSync("fixing.txt");
                 let lineArray = article.toString()
                 if (lineArray == 1) {
-                    if (owners.includes(message.author.id) === false) return message.reply("점검중입니다. 이용에 불편을 드려 죄송합니다.");
+                    if (owners.includes(message.author.id) === false) return message.reply(lang.index.onfix);
                 }
 
                 if (message.member.voice.channel) music.create(message.guild.id, message.member.voice.channel, message)
