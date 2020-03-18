@@ -17,6 +17,7 @@
 
 ## Contact
 Discord: `Yoru#0002`
+
 Mail: [Click here](mailto:yoru@outlook.kr)
 
 ### Developer
