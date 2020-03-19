@@ -143,7 +143,7 @@ module.exports.endStream = (identificate, message) => {
     Handles.get(identificate).voiceChannel.leave()
     let embed = new Discord.MessageEmbed()
         .setColor(require('./config').color)
-        .addField('재생목록이 종료되었습니다.', '더이상 플레이할 노래가 없어, 대기열을 초기화됬어! 그럼 난 이만👋')
+        .addField(lang.music.notoplay1, lang.music.notoplay2)
     if(!message) {
         Handles.get(identificate).channel.send(embed)
     }
