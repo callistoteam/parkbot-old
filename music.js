@@ -4,6 +4,7 @@ const yt = require('simple-youtube-api')
 const youtube = require('yt-search')
 const sf = require('snekfetch')
 const Discord = require('discord.js')
+const lang = require("./lang/kr")
 
 process.on('unhandledRejection', function (err) {
     console.log(err)
@@ -34,7 +35,7 @@ module.exports.next = (identificate) => {
         if (Handles.get(identificate).voiceChannel.members.filter(m => !m.user.bot).size == 0) {
             let embed = new Discord.MessageEmbed()
                 .setColor(require('./config').color)
-                .addField('채널에 아무도 없습니다.', '저런 노래는 듣지도 않으면서 틀어놨군... 전기를 아껴주라구! 대기열은 전부 초기화했어')
+                .addField(lang.music.npeopleinchannel1, lang.music.npeopleinchannel2)
             getGuild(identificate).channel.send(embed)
             Handles.remove(identificate)
         } else if(Handles.get(identificate).voiceChannel.members.filter(m => !m.user.bot).size != 0){

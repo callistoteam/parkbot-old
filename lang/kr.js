@@ -7,6 +7,10 @@ module.exports = {
     activity: `${prefix}도움말 | 디스코드를 흥겹게!`,
     onfix: "점검중입니다. 이용에 불편을 드려 죄송합니다."
   },
+  music: {
+    npeopleinchannel1: '채널에 아무도 없습니다.',
+    npeopleinchannel2: '저런 노래는 듣지도 않으면서 틀어놨군... 전기를 아껴주라구! 대기열은 전부 초기화했어'
+  },
   commands: {
     ping: {
       fping: '퐁! 지연시간을 측정중입니다.',
