@@ -46,7 +46,6 @@ module.exports.next = (identificate) => {
     } 
     
     else{
-        console.log('?')
         this.endStream(identificate)
     }
 }

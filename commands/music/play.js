@@ -1,5 +1,6 @@
 const hangul = require('hangul-tools')
 const Discord = require('discord.js')
+const lang = require('../../lang/kr')
 var youtubeThumbnail = require('youtube-thumbnail');
   
 module.exports = {
@@ -16,7 +17,7 @@ module.exports = {
         if(!message.data.args) return message.reply('검색 내용을 입력해야지...')
         await youtube(message.data.args, function(err,r){
             if(r.videos.length == 0) {
-                embed.addField('검색결과가 없습니다', '검색내용을 다시 한 번 학인해줄래?')
+                embed.addField(lang.commands.play.ns1, lang.commands.play.ns2)
                 return message.channel.send(embed)
             }
             else if(r.videos.length > 1){
