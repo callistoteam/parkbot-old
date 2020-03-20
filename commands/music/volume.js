@@ -10,7 +10,7 @@ module.exports = {
         embed.addField('현재 음량', '현재 볼륨은 `'+ Party.getGuild(message.guild.id).queue.volume + '`% 야! ')
     }
     else if(Number.isInteger(Number(message.data.args)) && Number(message.data.args) <= 100 && Number(message.data.args) >= 1 && !message.data.args.startsWith(0)) {
-        embed.addField('음량을 변경하였습니다', '현재 음량을 `'+message.data.args + '`% 로 업데이트했어!')
+        embed.addField(lang.commands.volume.changed, '현재 음량을 `'+message.data.args + '`% 로 업데이트했어!')
         Party.getGuild(message.guild.id).dispatcher.setVolume(Number(message.data.args)/100)
         Party.getGuild(message.guild.id).volume = Number(message.data.args)
 }
