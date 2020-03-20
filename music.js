@@ -31,7 +31,6 @@ module.exports.next = (identificate) => {
     this.getGuild(identificate).queue.shift();
 
     if (this.getQueue(identificate)[0]) {
-        console.log('a')
         if (Handles.get(identificate).voiceChannel.members.filter(m => !m.user.bot).size == 0) {
             let embed = new Discord.MessageEmbed()
                 .setColor(require('./config').color)
