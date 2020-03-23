@@ -7,14 +7,14 @@ module.exports = {
     name: "play",
     aliases: ["p", "ㅔㅣ묘", "재생"],
     category: "music",
-    description: "노래를 재생목록에 추가합니다! 유튜브 URL과 검색어를 지원합니다.",
+    description: "노래를 재생목록에 추가합니다. 유튜브 URL과 검색어를 지원합니다.",
     run:async (client, Party, message, embed, youtube) => {
         if(!message.member.voice.channel) {
             embed.addField('음성 채널에 들어가주세요', '먼저 음성채널에 들어가렴')
             return message.channel.send(embed)
     
         }    
-        if(!message.data.args) return message.reply('검색 내용을 입력해야지...')
+        if(!message.data.args) return message.reply('검색 내용을 입력해줘!')
         await youtube(message.data.args, function(err,r){
             if(r.videos.length == 0) {
                 embed.addField(lang.commands.play.ns1, lang.commands.play.ns2)

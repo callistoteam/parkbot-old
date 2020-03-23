@@ -17,7 +17,7 @@ module.exports = {
     name: "reboot",
     aliases: ["reboot"],
     category: "fordev",
-    description: "For Developer : reboot",
+    description: "reboot bot",
     usage: "",
     run: async (client, music, message, embed, youtube, args) => {
     if (owners.includes(message.author.id) === false) return message.channel.send(lang.commands.reboot.noperm);
