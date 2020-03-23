@@ -8,7 +8,7 @@ module.exports = {
         return message.channel.send(lang.commands.resume.cannotuse)
         Party.resumeStream(message.guild.id)
     
-        embed.addField('곡을 이어서 재생합니다.', '플레중이던 노래를 다시 재생할게!')
+        embed.addField('곡을 이어서 재생합니다.', '플레이중이던 노래를 다시 재생할게!')
         message.channel.send(embed)
     }
 }

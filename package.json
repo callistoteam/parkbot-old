@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Yoru",
+  "author": "Yoru , wonderlandpark",
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.1.0",

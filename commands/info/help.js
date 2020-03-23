@@ -4,7 +4,7 @@ const lang = require("../../lang/kr")
 
 module.exports = {
     name: "help",
-    aliases: ["h"],
+    aliases: ["h", "도움말", "도움", "ㅗ디ㅔ"],
     category: "info",
     description: "도움말",
     usage: "[command name | 다른 사용법]",

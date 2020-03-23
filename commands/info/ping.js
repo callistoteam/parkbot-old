@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "ping",
-  aliases: ["pong"],
+  aliases: ["pong", "핑", "ㅔㅑㅜㅎ"],
   category: "info",
   description: "봇의 지연시간 측정",
   usage: "",
