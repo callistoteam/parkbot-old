@@ -49,6 +49,7 @@ function getCMD(client, message, input) {
     if (cmd.name) info = `도움말: ${cmd.name}`;
     if (cmd.aliases) info += `\n:pushpin: 다른 사용법: ${cmd.aliases.map(a => `\`${a}\``).join(", ")}`;
     if (cmd.description) info += `\n:pencil: 설명: ${cmd.description}`;
+    if (cmd.docs) info += `\n:newspaper: 문서: ${cmd.docs}`;
     if (cmd.usage) {
         info += `\n:bulb: 사용방법: ${cmd.usage}`;
         embed.setFooter(lang.commands.help.syntax);
