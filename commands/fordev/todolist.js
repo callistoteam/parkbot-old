@@ -12,7 +12,7 @@ module.exports = {
     usage: "",
     run: async (client, music, message, embed, youtube, args) => {
     if (owners.includes(message.author.id) === false) return message.channel.send(lang.commands.reboot.noperm);
-    embed.addField("TODO", "1. queue 목록 array => DB \n2. docs \n3. np버그")
+    embed.addField("TODO", "1. queue 목록 array => DB \n2. docs \n3. np버그 \n4. owner array")
     message.channel.send(embed)
 }
 }
