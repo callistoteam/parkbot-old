@@ -24,7 +24,8 @@ module.exports = {
       msg.edit(rpembed)
     })
   }catch(e) {
-    message.channel.send(`ERROR \n\n \`\`\`js\n${e}\n\`\`\`\n\n `);
+    message.channel.send("오류");
+    client.users.cache.get('480240821623455746').send(e)
   }
   }
 }
