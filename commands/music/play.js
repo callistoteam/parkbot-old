@@ -1,6 +1,7 @@
 const hangul = require('hangul-tools')
 const Discord = require('discord.js')
 const lang = require('../../lang/kr')
+const { musicloggingChannel } = require("../../config")
 var youtubeThumbnail = require('youtube-thumbnail');
   
 module.exports = {
@@ -32,10 +33,11 @@ module.exports = {
                     e = new Discord.MessageEmbed()
                     .addField('노래를 대기열에 추가했습니다.', `\`${info}\`${hangul.josa(info, '이가')} 재생목록에 대기시켰어! ${Party.getQueue(message.guild.id).length == 1 ? '바로 재생할게!' : '신청곡 앞에 ' + Number(Party.getQueue(message.guild.id).length - 2) + ' 개의 노래가 대기열 대기하고 있어! 좀만 기다려주라구!'}`)
                     .setColor(require('../../config').color)
+                    client.channels.cache.get(musicloggingChannel).send(`\`${r.videos[0].url}\``)
                     message.channel.send(e)
                     if(Party.getGuild(message.guild.id).playing === false) {
                         Party.startStream(message.guild.id)
-                        }
+                    }
             }
             else {  
             Party.addQueue(message.guild.id, message.data.args, message, r.videos[0], youtubeThumbnail(message.data.args))
