@@ -4,3 +4,4 @@ ffmpeg.exe
 musicplaydata/
 index.html
 TOS.txt
+build/config.gypi
