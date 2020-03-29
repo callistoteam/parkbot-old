@@ -19,8 +19,5 @@ module.exports = {
         message.channel.send(embed)
         Party.removeQueue(message.guild.id, message.data.args + 1)
     }
-
-    
-    
     }
 }

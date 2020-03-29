@@ -9,6 +9,16 @@ const youtube = require('yt-search')
 const prefix = config.prefix
 const lang = require("./lang/kr")
 
+const knex = require('knex')({
+    client: 'mysql',
+    connection: {
+      host : localhost,
+      user : config.DBUser,
+      password : config.DBPassword,
+      database : config.DBName
+    }
+})
+
 module.exports = class extends BaseCluster {
     launch() {
         const client = this.client

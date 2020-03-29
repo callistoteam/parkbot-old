@@ -6,3 +6,6 @@ module.exports.playmsg = ['`%song%` 큐!', '`%song%` 한곡 뽑아볼게', '%son
 module.exports.noticeChannel = "if leave/join guild, bot send message to this channel"
 module.exports.displayname = "BOT's NAME"
 module.exports.musicloggingChannel = 'If the bot plays a song, it will be logged to this channel'
+module.exports.DBUser = ""
+module.exports.DBPassword = ""
+module.exports.DBName = ""
