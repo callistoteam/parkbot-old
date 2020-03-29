@@ -37,7 +37,6 @@ module.exports = {
       changed: '음량을 변경하였습니다'
     },
     resume: {
-      cannotuse: "해당 기능은 이용하실 수 없습니다. : 고장났습니다. \n 일시정지 했던 곡을 다시 재생하려면 `#play (아무노래제목)`"
     },
     play: {
       ns1: '검색결과가 없습니다',
