@@ -1,8 +1,7 @@
-  
-module.exports = {
+  module.exports = {
     name: "queue",
     category: "music",
-    aliases: ["큐", "q"],
+    aliases: ["큐", "q", "벼뎓"],
     description: "플레이중인 노래와 대기열을 불러옵니다!",
     run: async (client, Party, message, embed, youtube) => {
     if(!Party.getQueue(message.guild.id)||Party.getQueue(message.guild.id).length == 0) {
