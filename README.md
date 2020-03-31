@@ -1,7 +1,7 @@
 # parkbot
 
 ## Introducing
-[Website](https://yoru.pe.kr/parkbot)
+[Website](https://callisto.team/projects/parkbot)
 
 ## Run
 ### Requirements
@@ -21,6 +21,4 @@ Discord: `Yoru#0002`
 Mail: [Click here](mailto:yoru@outlook.kr)
 
 ### Developer
-[Yoru](https://yoru.pe.kr)
-
-[wonderlandpark](http://dev.wonderbot.xyz)
+[Yoru](https://yoru.pe.kr), [wonderlandpark](http://dev.wonderbot.xyz)
