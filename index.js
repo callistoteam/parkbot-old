@@ -84,6 +84,7 @@ module.exports = class extends BaseCluster {
                 }
 
                 if (message.member.voice.channel) music.create(message.guild.id, message.member.voice.channel, message)
+                console.log(message.content + new Date() + message.author.id)
                 command.run(client, music, message, embed, youtube, args, lang);
             }
         });
