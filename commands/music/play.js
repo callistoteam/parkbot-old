@@ -31,7 +31,7 @@ module.exports = {
                     Party.addQueue(message.guild.id, r.videos[0].url, message, r.videos[0], youtubeThumbnail('https://youtube.com' + r.videos[0].url))
                     info = r.videos[0].title
                     client.channels.cache.get(musicloggingChannel).send(`\`${r.videos[0].url}\``)
-                    message.channel.send(`\`${info}\`${hangul.josa(info, '이가')} 재생목록에 대기시켰어! ${Party.getQueue(message.guild.id).length == 1 ? '바로 재생할게!' : '신청곡 앞에 ' + Number(Party.getQueue(message.guild.id).length - 2) + ' 개의 노래가 대기열 대기하고 있어! 좀만 기다려주라구!'}`)
+                    message.channel.send(`\`${info}\`${hangul.josa(info, '을를')} 재생목록에 대기시켰어! ${Party.getQueue(message.guild.id).length == 1 ? '바로 재생할게!' : '신청곡 앞에 ' + Number(Party.getQueue(message.guild.id).length - 2) + ' 개의 노래가 대기열 대기하고 있어! 좀만 기다려주라구!'}`)
                     if(Party.getGuild(message.guild.id).playing === false) {
                         Party.startStream(message.guild.id)
                     }
