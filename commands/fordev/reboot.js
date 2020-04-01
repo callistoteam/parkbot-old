@@ -2,15 +2,6 @@
 const fs = require('fs');
 const lang  = require("../../lang/kr")
 
-function isJSON(json) {
-    try {
-        JSON.parse(json);
-        return true;
-    } catch (e) {
-        return false;
-    }
-}
-
 const owners = ["480240821623455746"];
 
 module.exports = {
@@ -23,5 +14,5 @@ module.exports = {
     if (owners.includes(message.author.id) === false) return message.channel.send(lang.commands.reboot.noperm);
     message.reply(lang.commands.reboot.okreboot)
     client.shard.send({ type: "reboot", shard: "all" }) 
-}
+    }
 }
