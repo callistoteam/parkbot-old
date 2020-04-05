@@ -12,6 +12,7 @@
 | discord.js | 12.0.2 | 12.0.2 |
 | node-opus | 0.3.3 | 0.3.3 |
 
+0. `yarn install`
 1. rename `config.example.js` to `config.js` and edit `config.js`
 2. `node sharder.js`(Run `sharder` unconditionally)
 
