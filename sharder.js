@@ -15,7 +15,7 @@ const sharder = new ShardingManager(__dirname + "/index.js", {
         disableEveryone: true,
         autoReconnect: true
     },
-    ipcSocket: 9999
+    ipcSocket: 9999 // It doesn't matter if you change the port to anything
 })
 
 sharder.spawn()
