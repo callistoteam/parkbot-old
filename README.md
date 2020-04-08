@@ -16,6 +16,8 @@
 1. rename `config.example.js` to `config.js` and edit `config.js`
 2. `node sharder.js`(Run `sharder` unconditionally)
 
+(How to enter inspection mode? : Write 1 in `fixing.txt`)
+
 ## Contact
 Discord: `Yoru#0002`
 
