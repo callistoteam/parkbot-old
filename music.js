@@ -1,3 +1,6 @@
+// 코드가 하나씩 간격을 두는 것은 오류가 아닙니다.
+// It is not an error that the codes are spaced one by one.
+
 const ytdl = require('ytdl-core')
 
 const Handles = new Map()
@@ -271,5 +274,5 @@ module.exports.changeStatus = (identificate, status) => {
 function random(items) {
 
     return items[Math.floor(Math.random() * items.length)];
-    
+
 }
