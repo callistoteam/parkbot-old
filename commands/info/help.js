@@ -20,7 +20,7 @@ module.exports = {
 function getAll(client, message) {
     const embed = new MessageEmbed()
         .setColor("RANDOM")
-        .addField("파크봇 도움말", "파크봇을 이용해 주셔서 감사합니다. \n이 봇을 이용하시면 [이용약관](https://yoru.pe.kr/parkbot/#tos)에 동의하신걸로 간주됩니다.\n\n봇 초대하기: [여기를 눌러 초대하기](https://is.gd/aPHvVT)")
+        .addField("파크봇 도움말", "파크봇을 이용해 주셔서 감사합니다. \n이 봇을 이용하시면 [이용약관](https://callisto.team/tos)에 동의하신걸로 간주됩니다.\n\n봇 초대하기: [여기를 눌러 초대하기](https://is.gd/aPHvVT)")
 
     const commands = (category) => {
         return client.commands
