@@ -4,7 +4,6 @@ module.exports = {
     fail: `❌  -> name이 존재하지 않습니다(또는 string타입이 아닙니다)`
   },
   index: {
-    activity: `${prefix}도움말 | 디스코드를 흥겹게!`,
     onfix: "점검중입니다. 이용에 불편을 드려 죄송합니다."
   },
   music: {

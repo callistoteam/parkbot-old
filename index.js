@@ -19,6 +19,11 @@ const knex = require('knex')({
     }
 })
 
+const status_list = [
+    `${prefix}help | 디스코드를 흥겹게!`, 
+    `${prefix}도움말 | 디스코드를 흥겹게!`
+    ];
+
 module.exports = class extends BaseCluster {
     launch() {
         const client = this.client
@@ -39,7 +44,10 @@ module.exports = class extends BaseCluster {
 
         client.on('ready', () => {
             console.log(client.user.tag)
-            client.user.setActivity(lang.index.activity)
+            setInterval(() => {
+                const interstatus = Math.floor(Math.random() * (status_list.length - 1) + 1)
+                client.user.setActivity(status_list[interstatus])
+            }, 17000);
         })
 
         client.on("guildCreate", guild => {
