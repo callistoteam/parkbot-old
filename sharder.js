@@ -15,6 +15,8 @@ const sharder = new ShardingManager(__dirname + "/index.js", {
         disableEveryone: true,
         autoReconnect: true
     },
+    shardCount: 1,
+    guildsPerShard: 500,
     ipcSocket: 9999 // It doesn't matter if you change the port to anything
 })
 
