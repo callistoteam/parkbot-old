@@ -9,7 +9,7 @@ const youtube = require('yt-search')
 const prefix = config.prefix
 const lang = require("./lang/kr")
 
-const knex = require('knex')({
+/* const knex = require('knex')({
     client: 'mysql',
     connection: {
       host : localhost,
@@ -17,7 +17,7 @@ const knex = require('knex')({
       password : config.DBPassword,
       database : config.DBName
     }
-})
+}) */
 
 const status_list = [
     `${prefix}help | 디스코드를 흥겹게!`, 
@@ -30,7 +30,6 @@ module.exports = class extends BaseCluster {
 
         client.commands = new Collection();
         client.aliases = new Collection();
-
         client.categories = fs.readdirSync("./commands/");
 
 
@@ -100,7 +99,6 @@ module.exports = class extends BaseCluster {
         process.on("unhandledRejection", (reason, listener) => {
             try{ listener }catch(err) { throw err }
         })
-
         process.on("uncaughtException", error => { throw error })
 
         client.login(config.token)
