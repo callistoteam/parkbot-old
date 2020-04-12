@@ -109,31 +109,30 @@ module.exports.startStream = (identificate) => {
         .on('error', error => {
             console.log(error)
         })
-        
-    let dispatcher
+
+    let dispatcher = null
     Handles.get(identificate).voiceChannel.join().then(connection => {
-        dispatcher = connection.play(stream, { bitrate: 96 })
+        dispatcher = connection.play(stream)
+        dispatcher.setBitrate(96)
+        dispatcher.setVolume(0.5)
     })
     Handles.get(identificate).dispatcher = dispatcher
     console.log(Handles.get(identificate))
     Handles.get(identificate).playing = true
 
-    dispatcher.setVolume(this.getGuild(identificate).volume / 100)
-
-    dispatcher.on('end', () => {
+    dispatcher.on('finish', () => {
         if(!Handles.get(identificate)) return
         Handles.get(identificate).playing = false
         this.next(identificate)
     })
+
     dispatcher.on('start', () => { 
-      
         let info = getNP(identificate).info.title
         embed = new Discord.MessageEmbed()
         embed.setColor(require('./config').color)
         embed.addField('음악을 재생합니다!', random(require('./config').playmsg).replace('%song%', '`'+info+'`'))
         embed.setFooter('신청자 : ' + getNP(identificate).author.tag, getNP(identificate).author.avatarURL)
         getGuild(identificate).channel.send(embed)
-
     })
 }
 module.exports.endStream = (identificate, message) => {
@@ -161,6 +160,7 @@ module.exports.resumeStream = (identificate) => {
 module.exports.changeStatus = (identificate, status) => {
     Handles.get(identificate).playing = status
 }
+
 function random(items) {
     return items[Math.floor(Math.random() * items.length)];
 }

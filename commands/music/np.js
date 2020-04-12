@@ -17,10 +17,7 @@ module.exports = {
         embed.addField('조회수', np.views, true)
         embed.setThumbnail(Party.getNP(message.guild.id).thumbnail.default.url)
         return  message.channel.send(embed)
-    }
-        
-    
-   
+    } 
 }}
 
 function sectohhmmss(yeee, np) {

@@ -15,9 +15,9 @@ module.exports = {
         if(!message.member.voice.channel) {
             embed.addField('음성 채널에 들어가주세요', '먼저 음성채널에 들어가렴')
             return message.channel.send(embed)
-    
         }    
         if(!message.data.args) return message.reply('검색 내용을 입력해줘!')
+
         yts( message.data.args, function ( err, r ) {
             if ( err ) throw err
             console.log(r.videos.length)
@@ -32,6 +32,7 @@ module.exports = {
                     Party.startStream(message.guild.id)
                 }
             }
+            
             else {  
             Party.addQueue(message.guild.id, message.data.args, message, r.videos[0], youtubeThumbnail(message.data.args))
             info = r.videos[0].title
@@ -43,7 +44,5 @@ module.exports = {
             }
             
         })
-    
-        
     }
 }
