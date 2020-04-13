@@ -41,8 +41,7 @@ module.exports = {
             if(Party.getGuild(message.guild.id).playing === false) {
                 Party.startStream(message.guild.id)
                 }
-            }
-            
+            } 
         })
     }
 }
