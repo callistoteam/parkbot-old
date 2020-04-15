@@ -21,7 +21,8 @@ const lang = require("./lang/kr")
 
 const status_list = [
     `${prefix}help | 디스코드를 흥겹게!`, 
-    `${prefix}도움말 | 디스코드를 흥겹게!`
+    `${prefix}도움말 | 디스코드를 흥겹게!`,
+    `${prefix}help | 04.16`, 
     ];
 
 module.exports = class extends BaseCluster {
