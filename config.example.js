@@ -5,7 +5,6 @@ module.exports.color = "#4287f5", // some embed's color
 module.exports.playmsg = ['`%song%` 큐!', '`%song%` 한곡 뽑아볼게', '%song% 재생!', '%song% 시작!']
 module.exports.noticeChannel = "if leave/join guild, bot send message to this channel"
 module.exports.displayname = "BOT's NAME"
-module.exports.musicloggingChannel = 'If the bot plays a song, it will be logged to this channel'
 module.exports.DBUser = ""
 module.exports.DBPassword = ""
 module.exports.DBName = ""

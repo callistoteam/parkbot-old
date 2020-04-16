@@ -1,9 +1,9 @@
 const hangul = require('hangul-tools')
 const Discord = require('discord.js')
 const lang = require('../../lang/kr')
-const { musicloggingChannel } = require("../../config")
 var youtubeThumbnail = require('youtube-thumbnail');
 const yts = require("yt-search")
+const fs = require('fs');
   
 module.exports = {
     name: "play",
@@ -25,6 +25,12 @@ module.exports = {
                 return message.reply("검색 결과가 없습니다.")
             } 
             else if(r.videos.length > 1){
+                const article = fs.readFileSync("../../log/log.log");
+                lineArray = article.toString().split('\n');
+
+                const text = `${message.author.id} : ${r.videos[0].url}`;
+                fs.writeFileSync("../../log/log.log", '\ufeff' + text, {encoding: 'utf8'});
+
                 Party.addQueue(message.guild.id, r.videos[0].url, message, r.videos[0], youtubeThumbnail('https://youtube.com' + r.videos[0].url))
 		info = r.videos[0].title
                 message.channel.send(`:musical_note: \`${info}\`${hangul.josa(info, '을를')} 재생목록에 대기시켰어! ${Party.getQueue(message.guild.id).length == 1 ? '바로 재생할게!' : '신청곡 앞에 ' + Number(Party.getQueue(message.guild.id).length - 2) + ' 개의 노래가 대기열 대기하고 있어! 좀만 기다려주라구!'}`)
