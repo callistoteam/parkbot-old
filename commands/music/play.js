@@ -25,11 +25,11 @@ module.exports = {
                 return message.reply("검색 결과가 없습니다.")
             } 
             else if(r.videos.length > 1){
-                const article = fs.readFileSync("../../log/log.log");
+                const article = fs.readFileSync("./log/log.log");
                 lineArray = article.toString()
 
                 const text = `${lineArray} \n${message.author.id} : ${r.videos[0].url}`;
-                fs.writeFileSync("../../log/log.log", '\ufeff' + text, {encoding: 'utf8'});
+                fs.writeFileSync("./log/log.log", '\ufeff' + text, {encoding: 'utf8'});
 
                 Party.addQueue(message.guild.id, r.videos[0].url, message, r.videos[0], youtubeThumbnail('https://youtube.com' + r.videos[0].url))
 		        info = r.videos[0].title
