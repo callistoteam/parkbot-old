@@ -1,4 +1,4 @@
-  module.exports = {
+module.exports = {
     name: "nowplay",
     aliases: ["np", "ㅞ", "지금"],
     category: "music",
@@ -30,7 +30,6 @@ function sectohhmmss(yeee, np) {
     if (seconds < 10) {seconds = "0"+seconds;}
     
     return np.timestamp.match(/:/gi).length == 2 ? hours+ ':' : '' + minutes + ':' + seconds
-
 }
 
 
