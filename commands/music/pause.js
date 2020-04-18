@@ -1,5 +1,4 @@
-  
-module.exports = {
+  module.exports = {
     name: "pause",
     aliases: ["ㅔ면ㄷ", "일시정지", "ps"],
     category: "music",

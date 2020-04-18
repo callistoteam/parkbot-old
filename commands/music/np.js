@@ -1,5 +1,4 @@
-  
-module.exports = {
+  module.exports = {
     name: "nowplay",
     aliases: ["np", "ㅞ", "지금"],
     category: "music",

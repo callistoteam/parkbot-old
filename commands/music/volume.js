@@ -13,7 +13,7 @@ module.exports = {
         embed.addField(lang.commands.volume.changed, '현재 음량을 `'+message.data.args + '`% 로 업데이트했어!')
         Party.getGuild(message.guild.id).dispatcher.setVolume(Number(message.data.args)/100)
         Party.getGuild(message.guild.id).volume = Number(message.data.args)
-}
+    }
     else embed.addField('오류', lang.commands.volume.errvol)
     return message.channel.send(embed)
 }
