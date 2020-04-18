@@ -31,7 +31,3 @@ function sectohhmmss(yeee, np) {
     
     return np.timestamp.match(/:/gi).length == 2 ? hours+ ':' : '' + minutes + ':' + seconds
 }
-
-
-
-

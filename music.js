@@ -109,16 +109,16 @@ module.exports.startStream = (identificate) => {
         .on('error', error => {
             console.log(error)
         })
-
-    let dispatcher = null
+        
+    let dispatcher
     Handles.get(identificate).voiceChannel.join().then(connection => {
-        dispatcher = connection.play(stream)
-        dispatcher.setBitrate(96)
-        dispatcher.setVolume(0.5)
+        dispatcher = connection.play(stream, { bitrate: 96 })
     })
     Handles.get(identificate).dispatcher = dispatcher
     console.log(Handles.get(identificate))
     Handles.get(identificate).playing = true
+
+    dispatcher.setVolume(this.getGuild(identificate).volume / 100)
 
     dispatcher.on('finish', () => {
         if(!Handles.get(identificate)) return
