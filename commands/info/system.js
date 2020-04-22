@@ -31,7 +31,7 @@ module.exports = {
                 .addField("OS", osName())
                 .addField("CPU NAME", osu.cpu.model())
                 .addField("CPU USAGE", `${cpubar}(${cpuPercentage}%)`)
-                .addField("RAM USAGE", `\`${os.totalmem()/1000000 - os.freemem()/1000000}MB\` / \`${os.totalmem()/1000000}MB\``)
+                .addField("RAM USAGE", `\`${Math.round(os.totalmem()/1000000 - os.freemem()/1000000)}MB\` / \`${Math.round(os.totalmem()/1000000)}MB\``)
                 .addField("UPTIME", yoruyoru(client))
                 .addField("PING", `${client.ws.ping}ms`)
                 .setTitle(`SYSTEM INFO`)
