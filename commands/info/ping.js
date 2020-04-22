@@ -9,7 +9,6 @@ module.exports = {
   run: async (client, music, message, embed, youtube, args, lang) => {
   try{
     const m = await message.channel.send(lang.commands.ping.fping).then(async msg => {
-
       let rpembed = new Discord.MessageEmbed()
       .setTitle(lang.commands.ping.eping)
       .setColor("RANDOM")
