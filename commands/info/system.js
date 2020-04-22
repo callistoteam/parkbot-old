@@ -33,7 +33,7 @@ module.exports = {
                 .addField("CPU USAGE", `${cpubar}(${cpuPercentage}%)`)
                 .addField("RAM USAGE", `\`${Math.round(os.totalmem()/1000000 - os.freemem()/1000000)}MB\` / \`${Math.round(os.totalmem()/1000000)}MB\``)
                 .addField("UPTIME", yoruyoru(client))
-                .addField("PING", `${client.ws.ping}ms`)
+                .addField("PING", `${Math.round(client.ws.ping)}ms`)
                 .setTitle(`SYSTEM INFO`)
                 msg.edit("\✅측정완료")
                 msg.edit(embed)
