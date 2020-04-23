@@ -75,6 +75,6 @@ const Discord = require("discord.js");\nconst child = require('child_process');\
             err = err.substr(0, 1000) + "\n(1000자 이상.."
         }
         message.channel.send(`:outbox_tray: 오류\n\`\`\`js\n${e} \n\`\`\``)
+        }
     }
-}
 }
