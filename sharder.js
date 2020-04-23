@@ -62,7 +62,7 @@ process.on("SIGINT", signal => {
         console.warn("[Kurasuta] [Shutdown] Destroying shard " + shard.id)
         shard.kill()
     })
-
     process.exit()
 })
+
 module.exports = sharder
