@@ -35,7 +35,7 @@ module.exports = {
                 .addField("UPTIME", yoruyoru(client))
                 .addField("PING", `${Math.round(client.ws.ping)}ms`)
                 .setTitle(`SYSTEM INFO`)
-                msg.edit("\✅측정완료")
+                msg.edit("✅측정완료")
                 msg.edit(embed)
             })
         })
