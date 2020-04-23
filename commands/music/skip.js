@@ -17,6 +17,6 @@ module.exports = {
         embed.addField('곡을 스킵하였습니다.', `${!message.data.args ? '현재 곡을' : `${message.data.args + '번 째로 대기 중인 곡을'}` } 스킵했어!`)
         message.channel.send(embed)
         Party.removeQueue(message.guild.id, message.data.args + 1)
-    }
+        }
     }
 }
