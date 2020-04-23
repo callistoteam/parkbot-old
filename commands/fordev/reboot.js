@@ -12,7 +12,7 @@ module.exports = {
     usage: "",
     run: async (client, music, message, embed, youtube, args) => {
         if (owners.includes(message.author.id) === false) return message.channel.send(lang.commands.reboot.noperm);
-        message.reply(lang.commands.reboot.okreboot)
-        client.shard.send({ type: "reboot", shard: "all" }) 
+            message.reply(lang.commands.reboot.okreboot)
+            client.shard.send({ type: "reboot", shard: "all" }) 
     }
 }
