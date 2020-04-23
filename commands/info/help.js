@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
 const lang = require("../../lang/kr")
+const config = require("../../config.js")
 
 module.exports = {
     name: "help",
@@ -20,12 +21,12 @@ module.exports = {
 function getAll(client, message) {
     const embed = new MessageEmbed()
         .setColor("RANDOM")
-        .addField("파크봇 도움말", "이 봇을 이용하시면 [이용약관](https://callisto.team/tos)에 동의하신걸로 간주됩니다.\n봇 초대하기: [여기를 눌러 초대하기](https://is.gd/aPHvVT)")
+        .addField(`${config.displayname} 도움말`, "이 봇을 이용하시면 [이용약관](https://callisto.team/tos)에 동의하신걸로 간주됩니다.\n봇 초대하기: [여기를 눌러 초대하기](https://is.gd/aPHvVT)")
 
     const commands = (category) => {
         return client.commands
             .filter(cmd => cmd.category === category)
-            .map(cmd => `\`#${cmd.name}\``)
+            .map(cmd => `\`${config.prefix}${cmd.name}\``)
             .join("\n");
     }
 
