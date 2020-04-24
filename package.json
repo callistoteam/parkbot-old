@@ -24,6 +24,7 @@
     "request": "^2.88.2",
     "simple-youtube-api": "^5.2.1",
     "snekfetch": "^4.0.4",
+    "systeminformation": "^4.23.5",
     "uuid": "^7.0.2",
     "uws": "^100.0.1",
     "whatap": "^0.4.15",
