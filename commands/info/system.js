@@ -1,11 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 const os = require("os")
 const osName = require('os-name')
-const child = require("child_process")
-
-function replaceAll(str, searchStr, replaceStr) {
-    return str.split(searchStr).join(replaceStr);
-}
 
 function yoruyoru(client) {
     let totalSeconds = (client.uptime / 1000);
@@ -16,10 +11,6 @@ function yoruyoru(client) {
     let seconds = totalSeconds % 60;
     let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${Math.round(seconds)} seconds;`
     return uptime
-}
-
-function getramusage() {
-    return replaceAll(`${child.execSync("free -m")}`, " ", "").split("")[56] + replaceAll(`${child.execSync("free -m")}`, " ", "").split("")[57] + replaceAll(`${child.execSync("free -m")}`, " ", "").split("")[58]
 }
 
 module.exports = {
@@ -40,7 +31,7 @@ module.exports = {
                 .addField("OS", osName())
                 .addField("CPU NAME", osu.cpu.model())
                 .addField("CPU USAGE", `${cpubar}(${cpuPercentage}%)`)
-                .addField("RAM USAGE", `\`${getramusage()}MB\` / \`${Math.round(os.totalmem()/1000000)}MB\``)
+                .addField("RAM USAGE", `\`${Math.round(((os.totalmem()/1000000 - os.freemem()/1000000) / (os.totalmem()/1000000)) * 100)}%\`(\`${Math.round(os.totalmem()/1000000 - os.freemem()/1000000)}MB\` / \`${Math.round(os.totalmem()/1000000)}MB\`)`)
                 .addField("UPTIME", yoruyoru(client))
                 .addField("PING", `${Math.round(client.ws.ping)}ms`)
                 .setTitle(`SYSTEM INFO`)
