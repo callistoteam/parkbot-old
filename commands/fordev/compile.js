@@ -14,7 +14,7 @@ const owners = ["480240821623455746"];
 
 module.exports = {
     name: "compile",
-    aliases: ["cmd"],
+    aliases: ["compile"],
     category: "fordev",
     description: "Compile",
     usage: "[code]",
