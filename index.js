@@ -20,7 +20,7 @@ function replaceAll(str, searchStr, replaceStr) {
       user : config.DBUser,
       password : config.DBPassword,
       database : config.DBName
-    }
+    } test
 }) */
 
 const status_list = [
