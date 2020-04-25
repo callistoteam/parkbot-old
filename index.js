@@ -24,8 +24,9 @@ function replaceAll(str, searchStr, replaceStr) {
 }) */
 
 const status_list = [
-    `${prefix}help | 디스코드를 에서 뮤직을!`, 
+    `${prefix}help | 디스코드에서 뮤직을!`, 
     `${prefix}도움말 | 디스코드를 흥겹게!`,
+    `${prefix}도움말 | 디스코드에서 음악을!`
 ];
 
 module.exports = class extends BaseCluster {
