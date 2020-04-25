@@ -27,7 +27,7 @@ module.exports = {
                     var title_info_text = title_info.text();
                     title[i] = title_info_text;
                     i++;
-                })
+                    })
                 }
 
                 for (var i = 0; i < rank; i++) {
@@ -36,10 +36,10 @@ module.exports = {
                     var artist_info_text = artist_info.text();
                     artist[i] = artist_info_text;
                     i++;
-                })
+                    })
                 }
 
-                    $('.year').each(function(){
+                $('.year').each(function(){
                     var date_info = $(this);
                     var date_info_text = date_info.text();
                     up_date = date_info_text;
@@ -71,8 +71,8 @@ module.exports = {
                 embed.setFooter("("+up_date_arr[0]+"년 "+up_date_arr[1]+"월 "+up_date_arr[2]+"일 "+newtime+"시에 업데이트됨)");
                 msg.edit("✅멜론차트를 불러왔습니다")
                 msg.edit(embed)  
-            }
-        });
-    })
+                }
+            });
+        })
     }
 }
