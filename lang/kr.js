@@ -1,4 +1,3 @@
-const { displayname } = require("../config")
 module.exports = {
   commands: {
     reboot: {
