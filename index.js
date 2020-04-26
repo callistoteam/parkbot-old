@@ -20,7 +20,7 @@ function replaceAll(str, searchStr, replaceStr) {
       user : config.DBUser,
       password : config.DBPassword,
       database : config.DBName
-    } test
+    }
 }) */
 
 const status_list = [
@@ -51,7 +51,7 @@ module.exports = class extends BaseCluster {
             setInterval(() => {
                 const interstatus = Math.floor(Math.random() * (status_list.length - 1) + 1)
                 client.user.setActivity(status_list[interstatus])
-            }, 17000);
+            }, 10000);
         })
 
         client.on("guildCreate", guild => {
