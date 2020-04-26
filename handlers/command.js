@@ -1,6 +1,5 @@
 const { readdirSync } = require("fs");
 const ascii = require("ascii-table");
-const lang = require("../lang/kr")
 
 let table = new ascii("Commands");
 
@@ -16,7 +15,7 @@ module.exports = (client) => {
                 client.commands.set(pull.name, pull);
                 table.addRow(file, '✅');
             } else {
-                table.addRow(file, lang.handlers.fail);
+                table.addRow(file, "❌");
                 continue;
             }
             if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => client.aliases.set(alias, pull.name));
