@@ -1,11 +1,5 @@
 const { prefix, displayname } = require("../config")
 module.exports = {
-  handlers: {
-    fail: `❌`
-  },
-  index: {
-    onfix: "점검중입니다. 이용에 불편을 드려 죄송합니다."
-  },
   music: {
     npeopleinchannel1: '채널에 아무도 없습니다.',
     npeopleinchannel2: '저런 노래는 듣지도 않으면서 틀어놨군... 전기를 아껴주라구! \`#p\`커맨드로 예전 대기열을 불러오고 재생할 수 있어!',
