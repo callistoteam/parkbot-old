@@ -1,7 +1,7 @@
 const { prefix, displayname } = require("../config")
 module.exports = {
   handlers: {
-    fail: `❌  -> name이 존재하지 않습니다(또는 string타입이 아닙니다)`
+    fail: `❌`
   },
   index: {
     onfix: "점검중입니다. 이용에 불편을 드려 죄송합니다."
