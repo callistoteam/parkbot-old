@@ -4,7 +4,6 @@ const yt = require('simple-youtube-api')
 const youtube = require('yt-search')
 const sf = require('snekfetch')
 const Discord = require('discord.js')
-const lang = require("./lang/kr")
 
 process.on('unhandledRejection', function (err) {
     console.log(err)
@@ -33,7 +32,7 @@ module.exports.next = (identificate) => {
         if (Handles.get(identificate).voiceChannel.members.filter(m => !m.user.bot).size == 0) {
             let embed = new Discord.MessageEmbed()
                 .setColor(require('./config').color)
-                .addField(lang.music.npeopleinchannel1, lang.music.npeopleinchannel2)
+                .addField('채널에 아무도 없습니다.', '저런 노래는 듣지도 않으면서 틀어놨군... 전기를 아껴주라구! \`#p\`커맨드로 예전 대기열을 불러오고 재생할 수 있어!',)
             getGuild(identificate).channel.send(embed)
             Handles.remove(identificate)
         } else if(Handles.get(identificate).voiceChannel.members.filter(m => !m.user.bot).size != 0){
@@ -139,7 +138,7 @@ module.exports.endStream = (identificate, message) => {
     Handles.get(identificate).voiceChannel.leave()
     let embed = new Discord.MessageEmbed()
         .setColor(require('./config').color)
-        .addField(lang.music.notoplay1, lang.music.notoplay2)
+        .addField('재생목록이 종료되었습니다.','더이상 플레이할 노래가 없어, 대기열을 초기화됬어! 그럼 난 이만👋')
     if(!message) {
         Handles.get(identificate).channel.send(embed)
     }

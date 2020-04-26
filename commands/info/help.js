@@ -34,7 +34,7 @@ function getAll(client, message) {
         .map(cat => stripIndents`**${cat[0].toUpperCase() + cat.slice(1)}** \n${commands(cat)}`)
         .reduce((string, category) => string + "\n" + category);
 
-    return message.channel.send(embed.setDescription(info).setFooter(lang.commands.help.description));
+    return message.channel.send(embed.setDescription(info).setFooter('`#help [커맨드이름]`으로 설명을 확인하세요'));
 }
 
 function getCMD(client, message, input) {
@@ -54,7 +54,7 @@ function getCMD(client, message, input) {
     if (cmd.docs) info += `\n:newspaper: 문서: [여기를 눌러 확인](${cmd.docs})`;
     if (cmd.usage) {
         info += `\n:bulb: 사용방법: ${cmd.usage}`;
-        embed.setFooter(lang.commands.help.syntax);
+        embed.setFooter("Syntax: <> = 꼭 필요함, [] = 옵션");
     }
 
     return message.channel.send(embed.setColor("GREEN").setDescription(info));

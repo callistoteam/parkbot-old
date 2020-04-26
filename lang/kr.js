@@ -1,24 +1,6 @@
-const { prefix, displayname } = require("../config")
+const { displayname } = require("../config")
 module.exports = {
-  music: {
-    npeopleinchannel1: '채널에 아무도 없습니다.',
-    npeopleinchannel2: '저런 노래는 듣지도 않으면서 틀어놨군... 전기를 아껴주라구! \`#p\`커맨드로 예전 대기열을 불러오고 재생할 수 있어!',
-    notoplay1: '재생목록이 종료되었습니다.',
-    notoplay2: '더이상 플레이할 노래가 없어, 대기열을 초기화됬어! 그럼 난 이만👋'
-  },
   commands: {
-    ping: {
-      fping: '퐁! 지연시간을 측정중입니다.',
-      eping: '퐁!',
-      dtime: '지연 시간',
-      apidtime: 'API 지연 시간',
-      pprg: `${displayname}의 핑 상태 : 정상`,
-      pprb: `${displayname}의 핑 상태 : 비정상`
-    }, 
-    help: {
-        description: '`#help [커맨드이름]`으로 설명을 확인하세요',
-        syntax: "Syntax: <> = 꼭 필요함, [] = 옵션"
-      },
     reboot: {
         okreboot: ':ok: 재시작합니다',
         noperm: "권한없음"

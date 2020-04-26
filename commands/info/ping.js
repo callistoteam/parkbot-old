@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const { displayname } = require("../config")
 
 module.exports = {
     name: "ping",
@@ -8,16 +9,16 @@ module.exports = {
     usage: "",
     run: async (client, music, message, embed, youtube, args, lang) => {
         try{
-            const m = await message.channel.send(lang.commands.ping.fping).then(async msg => {
+            const m = await message.channel.send("퐁! 봇의 지연시간을 측정중입니다").then(async msg => {
             let rpembed = new Discord.MessageEmbed()
-            .setTitle(lang.commands.ping.eping)
+            .setTitle("퐁!")
             .setColor("RANDOM")
-            .addField(lang.commands.ping.dtime, `${msg.createdTimestamp - message.createdTimestamp}ms`)
-            .addField(lang.commands.ping.apidtime, `${client.ws.ping}ms`)
+            .addField("지연 시간", `${msg.createdTimestamp - message.createdTimestamp}ms`)
+            .addField("API지연 시간" `${client.ws.ping}ms`)
             if(client.ws.ping+(msg.createdTimestamp - message.createdTimestamp) < 537) {
-                rpembed.setFooter(lang.commands.ping.pprg)
+                rpembed.setFooter(`${displayname}의 핑 상태 : 정상`)
             } else {
-                rpembed.setFooter(lang.commands.ping.pprb)
+                rpembed.setFooter(`${displayname}의 핑 상태 : 비정상`)
             }
             rpembed.setTimestamp()
             msg.edit(rpembed)
