@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.1.0",
-    "@discordjs/uws": "^10.149.0",
+    "@discordjs/uws": "^11.149.1",
     "ascii-table": "0.0.9",
     "async.parallel": "^0.5.2",
     "common-tags": "^1.8.0",
