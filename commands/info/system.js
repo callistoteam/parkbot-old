@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js")
-const os = require("os")
 const osName = require('os-name')
 const child = require("child_process")
 
