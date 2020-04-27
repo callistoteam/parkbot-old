@@ -24,6 +24,11 @@ function hostMem() {
     return result
 }
 
+function getCPUtemp() {
+    let temp = child.execSync("cat /sys/class/thermal/thermal_zone0/temp").toString() / 1000
+    return temp
+}
+
 module.exports = {
     name: "system",
     category: "info",
@@ -42,6 +47,7 @@ module.exports = {
                 .addField("OS", osName())
                 .addField("CPU NAME", osu.cpu.model())
                 .addField("CPU USAGE", `${cpubar}(${cpuPercentage}%)`)
+                .addField("CPU TEMP", `${getCPUtemp()}°C`)
                 .addField("RAM USAGE", `${hostMem().used} / ${hostMem().total}`)
                 .addField("UPTIME", yoruyoru(client))
                 .addField("PING", `${Math.round(client.ws.ping)}ms`)
