@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const { displayname } = require("../config")
+const { displayname } = require("../../config")
 
 module.exports = {
     name: "ping",
