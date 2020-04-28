@@ -61,7 +61,7 @@ module.exports = class extends BaseCluster {
             setInterval(() => {
                 const interstatus = Math.floor(Math.random() * (status_list.length - 1) + 1)
                 client.user.setActivity(status_list[interstatus])
-                const text = `{"ping": ${client.ws.ping}, "ram": ${hostMem().used.replace("Mi", "")}, "guild": ${client.guilds.cache.size}, "user": ${client.users.cache.size}, "lastupdate": ${new Date()/1}}`;
+                const text = `{"ping": ${client.ws.ping}, "ram": ${hostMem().used.replace("Mi", "").replace("Gi", "")}, "guild": ${client.guilds.cache.size}, "user": ${client.users.cache.size}, "lastupdate": ${new Date()/1}}`;
                 fs.writeFileSync("../parkbotAPI/data.json", text);
             }, 10000);
         })
