@@ -29,6 +29,16 @@ const status_list = [
     `${prefix}도움말 | 디스코드에서 음악을!`
 ];
 
+function hostMem() {
+    let result = {}
+    let data = child.execSync("free -h").toString().split(" ").filter(z => z !== "").reverse().slice(4).reverse()
+
+    result[data[0]] = data[6].replace(",", ".")
+    result[data[1]] = data[7].replace(",", ".")
+
+    return result
+}
+
 module.exports = class extends BaseCluster {
     launch() {
         const client = this.client
@@ -51,7 +61,7 @@ module.exports = class extends BaseCluster {
             setInterval(() => {
                 const interstatus = Math.floor(Math.random() * (status_list.length - 1) + 1)
                 client.user.setActivity(status_list[interstatus])
-                const text = `{"ping": ${client.ws.ping}, "ram": 256, "guild": ${client.guilds.cache.size}, "user": ${client.users.cache.size}, "lastupdate": ${new Date()/1}}`;
+                const text = `{"ping": ${client.ws.ping}, "ram": ${hostMem().used.replace("Mi", "")}, "guild": ${client.guilds.cache.size}, "user": ${client.users.cache.size}, "lastupdate": ${new Date()/1}}`;
                 fs.writeFileSync("../parkbotAPI/data.json", text);
             }, 10000);
         })
