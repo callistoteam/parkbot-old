@@ -34,7 +34,7 @@ module.exports = {
     }
 
     let code_in = `
-const Discord = require("discord.js");\nconst child = require('child_process');\nconst channel = message.channel\nconst bot = client;\n\n`+args.join(" ");
+const Discord = require("discord.js");\nconst child = require('child_process');\nconst fetch = require("node-fetch")\nconst bot = client;\n\n`+args.join(" ");
     let type;
     try {
         const result = new Promise((resolve) => resolve(eval(code_in)));
