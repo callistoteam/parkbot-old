@@ -76,7 +76,7 @@ function getGuild(identificate) {
 module.exports.addQueue = async (identificate, videoURL, message, info, thumb) => {
     let q = {
         url: videoURL,
-        author: message.author,
+        author: `<@${message.author.id}>`,
         vote: 0,
         time: new Date(),
         info: info,
