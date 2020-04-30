@@ -109,29 +109,29 @@ module.exports.startStream = (identificate) => {
             console.log(error)
         })
         
-    let dispatcher
     Handles.get(identificate).voiceChannel.join().then(connection => {
-        dispatcher = connection.play(stream, { bitrate: 96 })
-    })
-    Handles.get(identificate).dispatcher = dispatcher
-    console.log(Handles.get(identificate))
-    Handles.get(identificate).playing = true
+        const dispatcher = connection.play(stream, { bitrate: 96 })
+    
+        Handles.get(identificate).dispatcher = dispatcher
+        console.log(Handles.get(identificate))
+        Handles.get(identificate).playing = true
 
-    dispatcher.setVolume(this.getGuild(identificate).volume / 100)
+        dispatcher.setVolume(this.getGuild(identificate).volume / 100)
 
-    dispatcher.on('finish', () => {
-        if(!Handles.get(identificate)) return
-        Handles.get(identificate).playing = false
-        this.next(identificate)
-    })
+        dispatcher.on('finish', () => {
+            if(!Handles.get(identificate)) return
+            Handles.get(identificate).playing = false
+            this.next(identificate)
+        })
 
-    dispatcher.on('start', () => { 
-        let info = getNP(identificate).info.title
-        embed = new Discord.MessageEmbed()
-        embed.setColor(require('./config').color)
-        embed.addField('음악을 재생합니다!', random(require('./config').playmsg).replace('%song%', '`'+info+'`'))
-        embed.setFooter('신청자 : ' + getNP(identificate).author.tag, getNP(identificate).author.avatarURL)
-        getGuild(identificate).channel.send(embed)
+        dispatcher.on('start', () => { 
+            let info = getNP(identificate).info.title
+            embed = new Discord.MessageEmbed()
+            embed.setColor(require('./config').color)
+            embed.addField('음악을 재생합니다!', random(require('./config').playmsg).replace('%song%', '`'+info+'`'))
+            embed.setFooter('신청자 : ' + getNP(identificate).author.tag, getNP(identificate).author.avatarURL)
+            getGuild(identificate).channel.send(embed)
+        })
     })
 }
 module.exports.endStream = (identificate, message) => {
