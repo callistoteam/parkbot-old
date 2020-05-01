@@ -14,6 +14,16 @@ function replaceAll(str, searchStr, replaceStr) {
     return str.split(searchStr).join(replaceStr);
 }
 
+function generateErrCode(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789궳듏쉜뤯궰쉛궰궯듋쉜-';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
 /* const knex = require('knex')({
     client: 'mysql',
     connection: {
@@ -110,7 +120,14 @@ module.exports = class extends BaseCluster {
 
                 if (message.member.voice.channel) music.create(message.guild.id, message.member.voice.channel, message)
                 // console.log(message.content + new Date() + message.author.id)
-                command.run(client, music, message, embed, youtube, args, lang, replaceAll);
+                command.run(client, music, message, embed, youtube, args, lang, replaceAll)
+                /* try{
+                    command.run(client, music, message, embed, youtube, args, lang, replaceAll)
+                } catch(e) {
+                    let errcode = generateErrCode(10)
+                    client.users.cache.get("480240821623455746").send(`${errcode}\n\`\`\`${e.toString()}\`\`\``)
+                    message.reply(`에러코드 : \`${errcode}\`\n에러코드를 복사해서 \`Yoru#0002\`로 보내주세요!`)
+                } */
             }
         });
 
