@@ -1,4 +1,3 @@
-const lang = require("../../lang/kr")
 module.exports = {
     name: "resume",
     category: "music",

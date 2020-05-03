@@ -7,7 +7,6 @@ const music = require('./music')
 const yt = require('simple-youtube-api')
 const youtube = require('yt-search')
 const prefix = config.prefix
-const lang = require("./lang/kr")
 const child = require("child_process")
 
 function replaceAll(str, searchStr, replaceStr) {
@@ -120,9 +119,9 @@ module.exports = class extends BaseCluster {
 
                 if (message.member.voice.channel) music.create(message.guild.id, message.member.voice.channel, message)
                 // console.log(message.content + new Date() + message.author.id)
-                command.run(client, music, message, embed, youtube, args, lang, replaceAll)
+                command.run(client, music, message, embed, youtube, args, replaceAll)
                 /* try{
-                    command.run(client, music, message, embed, youtube, args, lang, replaceAll)
+                    command.run(client, music, message, embed, youtube, args, replaceAll)
                 } catch(e) {
                     let errcode = generateErrCode(10)
                     client.users.cache.get("480240821623455746").send(`${errcode}\n\`\`\`${e.toString()}\`\`\``)

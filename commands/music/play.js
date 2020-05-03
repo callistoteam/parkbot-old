@@ -1,5 +1,4 @@
 const hangul = require('hangul-tools')
-const Discord = require('discord.js')
 var youtubeThumbnail = require('youtube-thumbnail');
 const yts = require("yt-search")
 const fs = require('fs');

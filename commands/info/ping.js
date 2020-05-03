@@ -7,7 +7,7 @@ module.exports = {
     category: "info",
     description: "봇의 지연시간 측정",
     usage: "",
-    run: async (client, music, message, embed, youtube, args, lang) => {
+    run: async (client, music, message, embed, youtube, args) => {
         try{
             const m = await message.channel.send("<a:loadingforpark:702385005590085632> 잠시만 기다려주세요").then(async msg => {
             let rpembed = new Discord.MessageEmbed()

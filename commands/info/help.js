@@ -1,6 +1,5 @@
 const { MessageEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
-const lang = require("../../lang/kr")
 const config = require("../../config.js")
 
 module.exports = {

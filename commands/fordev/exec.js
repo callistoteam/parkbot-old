@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-const fs = require('fs');
 const child = require("child_process")
 
 const owners = ["480240821623455746"];
@@ -10,7 +8,7 @@ module.exports = {
     category: "fordev",
     description: "exec",
     usage: "[code]",
-    run: async (client, music, message, embed, youtube, args, lang, replaceAll) => {
+    run: async (client, music, message, embed, youtube, args, replaceAll) => {
         if (owners.includes(message.author.id) === false) return message.channel.send("권한없음")
 
         try{
