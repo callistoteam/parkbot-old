@@ -13,7 +13,7 @@ function replaceAll(str, searchStr, replaceStr) {
     return str.split(searchStr).join(replaceStr);
 }
 
-function generateErrCode(length) {
+/* function generateErrCode(length) {
     var result           = '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789궳듏쉜뤯궰쉛궰궯듋쉜-';
     var charactersLength = characters.length;
@@ -23,7 +23,7 @@ function generateErrCode(length) {
     return result;
   }
 
-/* const knex = require('knex')({
+const knex = require('knex')({
     client: 'mysql',
     connection: {
       host : localhost,

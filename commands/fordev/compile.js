@@ -17,7 +17,7 @@ module.exports = {
     aliases: ["compile"],
     category: "fordev",
     description: "Compile",
-    usage: "[code]",
+    usage: "<code>",
     run: async (client, music, message, embed, youtube, args, replaceAll) => {
         if (owners.includes(message.author.id) === false) return message.channel.send("권한없음")
 

@@ -3,6 +3,7 @@
     category: "music",
     aliases: ["큐", "q", "벼뎓"],
     description: "플레이중인 노래와 대기열을 불러옵니다!",
+    usage: "[페이지]",
     run: async (client, Party, message, embed, youtube) => {
     if(!Party.getQueue(message.guild.id)||Party.getQueue(message.guild.id).length == 0) {
         embed.addField('재생중인 노래가 없습니다', '이 서버에서 플레이중인 노래는 없어!')

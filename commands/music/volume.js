@@ -3,6 +3,7 @@ module.exports = {
     category: "music",
     aliases: ["v", "볼륨", "음량", "vol"],
     description: "현재 플레이중인 곡의 볼륨을 조절합니다! 1~100 사이 정수로 볼륨을 업데이트 할 수 있습니다!",
+    usage: "볼륨",
     run: (client, Party, message, embed, youtube) => {
     if(!Party.getNP(message.guild.id)) return message.reply("재생중인 노래가 없습니다")
     if(!message.data.args) {
