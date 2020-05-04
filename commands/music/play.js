@@ -16,7 +16,7 @@ module.exports = {
         }
 
         const m = await message.channel.send("<a:loadingforpark:702385005590085632> 검색중입니다").then(async msg => {
-            if(!message.data.args) return message.reply('검색 내용을 입력해줘!')
+            if(!message.data.args) return msg.edit('검색 내용을 입력해줘!')
 
             if(message.data.args.indexOf("youtube.com/watch?v=") != -1) {
                 // 시간날때 개발 예정
@@ -24,9 +24,8 @@ module.exports = {
 
             yts( message.data.args, function ( err, r ) {
                 if ( err ) throw err
-                console.log(r.videos.length)
                 if(r.videos.length == 0){
-                    return message.reply("검색 결과가 없습니다.")
+                    return msg.edit("검색 결과가 없습니다.")
                 } 
 
                 else if(r.videos.length > 1){

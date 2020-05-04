@@ -22,7 +22,7 @@ module.exports = {
                 headers: headers,
                 body: JSON.stringify(body)
             })
-            message.reply(":ok:")
+            message.reply(`:ok: | \`${client.guilds.cache.size}\``)
         } catch(e) {
             return message.channel.send(e)
         }
