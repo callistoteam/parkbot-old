@@ -21,6 +21,7 @@ function getAll(client, message) {
     const embed = new MessageEmbed()
         .setColor("RANDOM")
         .addField(`${config.displayname} 도움말`, "이 봇을 이용하시면 [이용약관](https://callisto.team/tos)에 동의하신걸로 간주됩니다.\n봇 초대하기: [여기를 눌러 초대하기](https://parkbot.yoru.pe.kr/)")
+        .addField("더 자세한 도움말이 필요하세요?", "[여기를 눌러 확인하기](https://parkbot.yoru.pe.kr/help/)")
 
     const commands = (category) => {
         return client.commands
@@ -33,7 +34,7 @@ function getAll(client, message) {
         .map(cat => stripIndents`**${cat[0].toUpperCase() + cat.slice(1)}** \n${commands(cat)}`)
         .reduce((string, category) => string + "\n" + category);
 
-    return message.channel.send(embed.setDescription(info).setFooter('`#help [커맨드이름]`으로 설명을 확인하세요'));
+    return message.channel.send(embed.setDescription(info));
 }
 
 function getCMD(client, message, input) {
