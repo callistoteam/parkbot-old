@@ -9,7 +9,6 @@
   "author": "Yoru , wonderlandpark",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/opus": "^0.3.2",
     "ascii-table": "0.0.9",
     "async.parallel": "^0.5.2",
     "common-tags": "^1.8.0",
