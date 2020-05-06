@@ -39,7 +39,7 @@ const status_list = [
     `${prefix}도움말 | 디스코드에서 음악을!`
 ];
 
-function hostMem() {
+/* function hostMem() {
     let result = {}
     let data = child.execSync("free -h").toString().split(" ").filter(z => z !== "").reverse().slice(4).reverse()
 
@@ -47,7 +47,7 @@ function hostMem() {
     result[data[1]] = data[7].replace(",", ".")
 
     return result
-}
+} */
 
 module.exports = class extends BaseCluster {
     launch() {
