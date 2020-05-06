@@ -1,6 +1,6 @@
 const child = require("child_process")
 
-const owners = ["480240821623455746"];
+const owners = require("../../config").owner
 
 module.exports = {
     name: "exec",

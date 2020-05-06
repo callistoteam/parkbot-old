@@ -1,4 +1,4 @@
-const owners = ["480240821623455746"];
+const owners = require("../../config").owner
 const { koreanbotsToken } = require("../../config")
 
 module.exports = {

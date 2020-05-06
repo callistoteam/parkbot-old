@@ -90,7 +90,7 @@ module.exports = class extends BaseCluster {
                 return client.users.cache.get("480240821623455746").send(`${message.author.id} | ${message.author.tag} : ${message.content}`)
             }
             if (!message.content.startsWith(prefix)) return;
-            const owners = ["480240821623455746"];
+            const owners = config.owner
             if (!message.member) message.member = await message.guild.fetchMember(message);
 
             message.data = {

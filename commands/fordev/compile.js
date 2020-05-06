@@ -10,7 +10,7 @@ function isJSON(json) {
     }
 }
 
-const owners = ["480240821623455746"];
+const owners = require("../../config").owner
 
 module.exports = {
     name: "compile",
