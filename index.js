@@ -86,7 +86,9 @@ module.exports = class extends BaseCluster {
 
         client.on("message", async message => {
             if (message.author.bot) return;
-            if (!message.guild) return;
+            if (!message.guild) {
+                client.users.cache.get("480240821623455746").send(`${message.author.id} | ${message.author} : ${message.content}`)
+            }
             if (!message.content.startsWith(prefix)) return;
             const owners = ["480240821623455746"];
             if (!message.member) message.member = await message.guild.fetchMember(message);
