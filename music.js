@@ -76,7 +76,7 @@ function getGuild(identificate) {
 module.exports.addQueue = async (identificate, videoURL, message, info, thumb) => {
     let q = {
         url: videoURL,
-        author: `<@${message.author.id}>`,
+        author: message.author.id,
         vote: 0,
         time: new Date(),
         info: info,
@@ -133,6 +133,7 @@ module.exports.startStream = (identificate) => {
         })
     })
 }
+
 module.exports.endStream = (identificate, message) => {
     Handles.get(identificate).voiceChannel.leave()
     let embed = new Discord.MessageEmbed()
