@@ -105,10 +105,10 @@ module.exports.startStream = (identificate) => {
         quality: 'highest',
         filter: 'audioonly'
     })
-        .on('error', error => {
-            console.log(error)
-        })
-        
+    .on('error', error => {
+        console.log(error)
+    })
+    
     Handles.get(identificate).voiceChannel.join().then(connection => {
         const dispatcher = connection.play(stream, { bitrate: 96 })
     
