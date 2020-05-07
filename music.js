@@ -104,8 +104,7 @@ module.exports.startStream = (identificate) => {
     const stream = ytdl(this.getNP(identificate).url, {
         quality: 'highest',
         filter: 'audioonly'
-    })
-    .on('error', error => {
+    }).on('error', error => {
         console.log(error)
     })
     
