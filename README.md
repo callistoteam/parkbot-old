@@ -10,7 +10,7 @@
 | Node.js | 12.16.1 | 12.16.1 |
 | NPM | 6.13.6 | 6.13.6 |
 | discord.js | 12.0.2 | 12.0.2 |
-| @discordjs/opus | ? | ? |
+| opusscript | ? | ? |
 
 0. `yarn install`
 1. rename `config.example.js` to `config.js` and edit `config.js`
