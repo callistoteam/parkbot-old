@@ -8,7 +8,7 @@ function generateErrCode(length) {
        result += characters.charAt(Math.floor(Math.random() * charactersLength))
     }
     return result
-  }
+}
 
 module.exports = {
     name: "lyrics",
@@ -31,8 +31,8 @@ module.exports = {
             })
         } catch(e) {
             let errcode = generateErrCode(10)
-            client.users.cache.get("480240821623455746").send(e + '\n\n' + errcode)
-            message.channel.send("에러가 발생했어... " + `에러코드: \`${errcode}\`` + "\n\n" + "에러코드를 복사해서 `Yoru#0002`로 보내줘!")
+            client.users.cache.get("480240821623455746").send(e + '\n\n' + errcode + message.content)
+            message.channel.send("에러가 발생했습니다" + `에러코드: \`${errcode}\`` + "\n\n" + "에러코드를 복사해서 `Yoru#0002`로 보내줘!")
         }
     }
 }
