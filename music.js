@@ -7,7 +7,7 @@ const Discord = require('discord.js')
 
 process.on('unhandledRejection', function (err) {
     console.log(err)
-});
+})
 
 module.exports.create = (identificate, voiceChannel, message) => {
     if (!Handles.get(identificate)) {
@@ -26,7 +26,7 @@ module.exports.start = (identificate) => {
 }
 
 module.exports.next = (identificate) => {
-    this.getGuild(identificate).queue.shift();
+    this.getGuild(identificate).queue.shift()
 
     if (this.getQueue(identificate)[0]) {
         if (Handles.get(identificate).voiceChannel.members.filter(m => !m.user.bot).size == 0) {
@@ -161,5 +161,5 @@ module.exports.changeStatus = (identificate, status) => {
 }
 
 function random(items) {
-    return items[Math.floor(Math.random() * items.length)];
+    return items[Math.floor(Math.random() * items.length)]
 }
