@@ -1,7 +1,7 @@
 # parkbot
 
 ## Introducing
-[Website](https://callisto.team/projects/parkbot)
+[Website](https://parkbot.yoru.pe.kr/)
 
 ## Run
 ### Requirements
