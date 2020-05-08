@@ -7,7 +7,6 @@ const music = require('./music')
 const yt = require('simple-youtube-api')
 const youtube = require('yt-search')
 const prefix = config.prefix
-const child = require("child_process")
 
 function replaceAll(str, searchStr, replaceStr) {
     return str.split(searchStr).join(replaceStr);
