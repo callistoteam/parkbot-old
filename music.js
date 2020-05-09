@@ -125,25 +125,18 @@ module.exports.startStream = (identificate) => {
 
         dispatcher.on('start', () => { 
             let info = getNP(identificate).info.title
-            embed = new Discord.MessageEmbed()
-            embed.setColor(require('./config').color)
-            embed.addField('음악을 재생합니다!', random(require('./config').playmsg).replace('%song%', '`'+info+'`'))
-            embed.setFooter('신청자 : ' + getNP(identificate).author.tag, getNP(identificate).author.avatarURL)
-            getGuild(identificate).channel.send(embed)
+            getGuild(identificate).channel.send('<a:playforpark:708621715571474482>음악을 재생합니다!' + random(require('./config').playmsg).replace('%song%', '`'+info+'`'))
         })
     })
 }
 
 module.exports.endStream = (identificate, message) => {
     Handles.get(identificate).voiceChannel.leave()
-    let embed = new Discord.MessageEmbed()
-        .setColor(require('./config').color)
-        .addField('재생목록이 종료되었습니다.','더이상 플레이할 노래가 없어, 대기열을 초기화됬어! 그럼 난 이만👋')
     if(!message) {
-        Handles.get(identificate).channel.send(embed)
+        Handles.get(identificate).channel.send("더이상 플레이할 노래가 없어, 대기열을 초기화됬어! 그럼 난 이만👋")
     }
     else if(message){
-        message.channel.send(embed)
+        message.channel.send("더이상 플레이할 노래가 없어 : 대기열을 초기화됬어! 그럼 난 이만👋")
     }
     Handles.delete(identificate)
 }
