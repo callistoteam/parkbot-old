@@ -142,11 +142,11 @@ module.exports.endStream = (identificate, message) => {
 }
 
 module.exports.pauseStream = (identificate) => {
-    Handles.get(identificate).voiceChannel.connection.dispatcher.pause()
+    Handles.get(identificate).dispatcher.pause()
 }
 
 module.exports.resumeStream = (identificate) => {
-    Handles.get(identificate).voiceChannel.connection.dispatcher.resume()
+    Handles.get(identificate).dispatcher.resume()
 }
 
 module.exports.changeStatus = (identificate, status) => {
