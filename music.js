@@ -135,7 +135,7 @@ module.exports.endStream = (identificate, message) => {
         Handles.get(identificate).channel.send("더이상 플레이할 노래가 없어, 대기열을 초기화됬어! 그럼 난 이만👋")
     }
     else if(message){
-        message.channel.send("더이상 플레이할 노래가 없어 : 대기열을 초기화됬어! 그럼 난 이만👋")
+        message.channel.send("더이상 플레이할 노래가 없어 : 대기열을 초기화했어! 그럼 난 이만👋")
     }
     Handles.delete(identificate)
 }
