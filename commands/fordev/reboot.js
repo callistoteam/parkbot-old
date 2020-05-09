@@ -7,7 +7,7 @@ module.exports = {
     description: "reboot bot",
     usage: "",
     run: async (client, music, message, embed, youtube, args) => {
-        if (owners.includes(message.author.id) === false) return message.channel.send("권한없음");
+        if (owners.includes(message.author.id) === false) return message.channel.send(":x: 권한없음");
             message.reply(":ok:")
             client.shard.send({ type: "reboot", shard: "all" }) 
     }

@@ -19,7 +19,7 @@ module.exports = {
     description: "Compile",
     usage: "<code>",
     run: async (client, music, message, embed, youtube, args, replaceAll) => {
-        if (owners.includes(message.author.id) === false) return message.channel.send("권한없음")
+        if (owners.includes(message.author.id) === false) return message.channel.send(":x: 권한없음")
 
         if(args.includes("inspection")) {
             const text = '1';

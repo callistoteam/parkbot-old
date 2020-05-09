@@ -8,7 +8,7 @@ module.exports = {
     description: "post servercount",
     usage: "",
     run: async (client, music, message, embed, youtube, args, replaceAll) => {
-        if (owners.includes(message.author.id) === false) return message.channel.send("권한없음")
+        if (owners.includes(message.author.id) === false) return message.channel.send(":x: 권한없음")
         const headers = {
             "Content-Type": "application/json",
             "token": koreanbotsToken
@@ -22,6 +22,7 @@ module.exports = {
                 headers: headers,
                 body: JSON.stringify(body)
             })
+            
             message.reply(`:ok: | \`${client.guilds.cache.size}\``)
         } catch(e) {
             return message.channel.send(e)
