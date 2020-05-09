@@ -9,8 +9,7 @@ module.exports = {
         return message.channel.send(embed)
     } else{
         let np = Party.getNP(message.guild.id).info
-        console.log(np)
-        embed.setTitle(np.title)
+        embed.setDescription(`**[${np.title}](https://youtube.com/watch?v=${np.videoId})**`)
         // embed.setDescription(`${sectohhmmss(Math.round(Party.getGuild(message.guild.id).dispatcher.streamingData.count * 0.2 / 10), Party.getNP(message.guild.id).info)} / ${np.timestamp}`)
         embed.addField('게시자', `[${np.author.name}](https://youtube.com${np.author.url})`)
         embed.addField('게시일', np.ago, true)

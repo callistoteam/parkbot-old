@@ -112,7 +112,6 @@ module.exports.startStream = (identificate) => {
         const dispatcher = connection.play(stream, { bitrate: 96 })
     
         Handles.get(identificate).dispatcher = dispatcher
-        console.log(Handles.get(identificate))
         Handles.get(identificate).playing = true
 
         dispatcher.setVolume(this.getGuild(identificate).volume / 100)
