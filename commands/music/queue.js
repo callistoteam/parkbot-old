@@ -19,7 +19,7 @@
             return message.channel.send(embed)
         }
         for(i = start; i < end; i++){
-        if(queue[i]) embed.addField(Number(i) == 0 ? '지금 재생중 : '+queue[i].info.title : '#'+Number(i) + ' '+queue[i].info.title, '신청자 : ' + queue[i].author)
+        if(queue[i]) embed.addField(Number(i) == 0 ? '지금 재생중 : '+queue[i].info.title : '#'+Number(i) + ' '+queue[i].info.title, '신청자 : ' + `<@${queue[i].author}>`)
         }
         embed.setFooter(`총 ${queue.length - 1} 곡 대기중 - ${arg ? arg : '1'}/${(end / 10).toString()} 페이지`)
         
