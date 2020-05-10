@@ -33,7 +33,8 @@ module.exports = {
                     const article = fs.readFileSync("./log/log.log");
                     lineArray = article.toString()
 
-                    const text = `${lineArray} \n${message.author.id} : ${r.videos[0].url}`
+                    const finenc = encrypt(`${message.author.id} : ${r.videos[0].url}`)
+                    const text = `${lineArray} \n${finenc}`
                     fs.writeFileSync("./log/log.log", '\ufeff' + text, {encoding: 'utf8'})
 
                     Party.addQueue(message.guild.id, r.videos[0].url, message, r.videos[0], youtubeThumbnail('https://youtube.com' + r.videos[0].url))
