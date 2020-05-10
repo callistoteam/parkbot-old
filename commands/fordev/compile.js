@@ -1,5 +1,6 @@
 ﻿const Discord = require("discord.js");
 const fs = require('fs');
+const { decrypt } = require("../../function")
 
 function isJSON(json) {
     try {
