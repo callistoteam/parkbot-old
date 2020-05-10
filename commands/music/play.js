@@ -2,6 +2,7 @@ const hangul = require('hangul-tools')
 var youtubeThumbnail = require('youtube-thumbnail');
 const yts = require("yt-search")
 const fs = require('fs');
+const { encrypt } = require("../../function")
   
 module.exports = {
     name: "play",
@@ -32,8 +33,8 @@ module.exports = {
                     const article = fs.readFileSync("./log/log.log");
                     lineArray = article.toString()
 
-                    const text = `${lineArray} \n${message.author.id} : ${r.videos[0].url}`;
-                    fs.writeFileSync("./log/log.log", '\ufeff' + text, {encoding: 'utf8'});
+                    const text = `${lineArray} \n${message.author.id} : ${r.videos[0].url}`
+                    fs.writeFileSync("./log/log.log", '\ufeff' + text, {encoding: 'utf8'})
 
                     Party.addQueue(message.guild.id, r.videos[0].url, message, r.videos[0], youtubeThumbnail('https://youtube.com' + r.videos[0].url))
 		            info = r.videos[0].title
