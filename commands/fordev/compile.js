@@ -2,15 +2,6 @@
 const fs = require('fs');
 const { decrypt } = require("../../function")
 
-function isJSON(json) {
-    try {
-        JSON.parse(json);
-        return true;
-    } catch (e) {
-        return false;
-    }
-}
-
 const owners = require("../../config").owner
 
 module.exports = {
