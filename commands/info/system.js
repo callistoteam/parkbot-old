@@ -1,5 +1,6 @@
 const osName = require('os-name')
 const child = require("child_process")
+const fs = require("fs")
 
 function yoruyoru(client) {
     let totalSeconds = (client.uptime / 1000);
@@ -22,16 +23,22 @@ function hostMem() {
     return result
 }
 
+function getLogfileSize() {
+    var stats = fs.statSync("./log/log.log")
+    var fileSizeInBytes = stats["size"]
+    return fileSizeInBytes / 1000 + "KB"
+}
+
 /* function getCPUtemp() {
     let temp = child.execSync("cat /sys/class/thermal/thermal_zone0/temp").toString() / 1000
     return temp
 } */
 
 module.exports = {
-    name: "system",
+    name: "상태",
     category: "info",
-    aliases: ["system", "시스템", "뇬ㅅ드"],
-    description: "서버의 상태를 확인합니다",
+    aliases: ["state", "status"],
+    description: "파크봇의 상태를 확인합니다",
     run: async (client, Party, message, embed, youtube) => {
         var osu = require('node-os-utils')
         var cpu = osu.cpu
@@ -46,9 +53,10 @@ module.exports = {
                 embed.addField("CPU USAGE", `${cpubar}(${cpuPercentage}%)`)
                 // embed.addField("CPU TEMP", `${getCPUtemp()}°C`)
                 embed.addField("RAM USAGE", `${hostMem().used} / ${hostMem().total}`)
+                embed.addField("LOG FILE SIZE", getLogfileSize())
                 embed.addField("UPTIME", yoruyoru(client))
                 embed.addField("PING", `${Math.round(client.ws.ping)}ms`)
-                embed.setTitle(`SYSTEM INFO`)
+                embed.setTitle("파크봇 상태")
                 msg.edit("✅측정완료")
                 msg.edit(embed)
             })
