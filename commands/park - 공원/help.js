@@ -20,8 +20,7 @@ module.exports = {
 function getAll(client, message) {
     const embed = new MessageEmbed()
         .setColor("RANDOM")
-        .addField(`${config.displayname} 도움말`, "이 봇을 이용하시면 `#tosandprivacy`커맨드에 동의한걸로 간주됩니다\n봇 초대하기: [여기를 눌러 초대하기](https://parkbot.yoru.pe.kr/)")
-        .addField("더 자세한 도움말이 필요하세요?", "[여기를 눌러 확인하기](https://parkbot.yoru.pe.kr/help/)\n`#help [커맨드]`로도 확인하실 수 있습니다.")
+        .addField("링크(들)", "[초대하기](https://parkbot.yoru.pe.kr)\n[지원 서버](https://discord.gg/jE33mfD)\n[이용약관](https://callisto.team/tos)\n[개인정보 취급(처리)방침](https://parkbot.yoru.pe.kr/privacy)")
 
     const commands = (category) => {
         return client.commands
