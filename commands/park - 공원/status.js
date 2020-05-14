@@ -36,7 +36,7 @@ function getLogfileSize() {
 
 module.exports = {
     name: "상태",
-    category: "info",
+    category: "park - 공원",
     aliases: ["state", "status"],
     description: "파크봇의 상태를 확인합니다",
     run: async (client, Party, message, embed, youtube) => {

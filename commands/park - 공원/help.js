@@ -5,7 +5,7 @@ const config = require("../../config.js")
 module.exports = {
     name: "help",
     aliases: ["h", "도움말", "도움", "ㅗ디ㅔ"],
-    category: "info",
+    category: "park - 공원",
     description: "도움말",
     usage: "[command name | 다른 사용법]",
     run: async (client, music, message, embed, youtube, args) => {
