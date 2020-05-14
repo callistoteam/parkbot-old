@@ -20,14 +20,14 @@ module.exports = {
 function getAll(client, message) {
     const embed = new MessageEmbed()
         .setColor("RANDOM")
-        .addField(`${config.displayname} 도움말`, "이 봇을 이용하시면 `#tosandprivacy`에 동의한걸로 간주됩니다\n봇 초대하기: [여기를 눌러 초대하기](https://parkbot.yoru.pe.kr/)")
+        .addField(`${config.displayname} 도움말`, "이 봇을 이용하시면 `#tosandprivacy`커맨드에 동의한걸로 간주됩니다\n봇 초대하기: [여기를 눌러 초대하기](https://parkbot.yoru.pe.kr/)")
         .addField("더 자세한 도움말이 필요하세요?", "[여기를 눌러 확인하기](https://parkbot.yoru.pe.kr/help/)\n`#help [커맨드]`로도 확인하실 수 있습니다.")
 
     const commands = (category) => {
         return client.commands
             .filter(cmd => cmd.category === category)
             .map(cmd => `\`${config.prefix}${cmd.name}\``)
-            .join("\n");
+            .join(", ");
     }
 
     const info = client.categories
