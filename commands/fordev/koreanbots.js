@@ -17,7 +17,7 @@ module.exports = {
         const body = { servers: client.guilds.cache.size }
         
         try{
-            require("node-fetch")("https://api.koreanbots.cf/bots/servers", {
+            require("node-fetch")("https://api.koreanbots.dev/bots/servers", {
                 method: 'POST',
                 headers: headers,
                 body: JSON.stringify(body)
