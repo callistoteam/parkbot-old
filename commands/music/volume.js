@@ -7,14 +7,16 @@ module.exports = {
     run: (client, Party, message, embed, youtube) => {
         if(!Party.getNP(message.guild.id)) return message.reply("재생중인 노래가 없습니다")
         if(!message.data.args) {
-            embed.addField('현재 음량', '현재 볼륨은 `'+ Party.getGuild(message.guild.id).volume + '`% 야! ')
+            let msg = '현재 볼륨은 `'+ Party.getGuild(message.guild.id).volume + '`% 야!'
+            return message.reply(msg)
         }
         else if(Number.isInteger(Number(message.data.args)) && Number(message.data.args) <= 100 && Number(message.data.args) >= 1 && !message.data.args.startsWith(0)) {
-            embed.addField("볼륨을 변경하였습니다", '현재 볼륨을 `'+message.data.args + '`% 로 업데이트했어!')
             Party.getGuild(message.guild.id).dispatcher.setVolume(Number(message.data.args)/100)
             Party.getGuild(message.guild.id).volume = Number(message.data.args)
+            let msg = '현재 볼륨을 `'+message.data.args + '`% 로 업데이트했어!'
+            return message.reply(msg)
         }
-        else embed.addField('오류', "1부터 100사이의 **정수**만 입력해줘!")
-        return message.channel.send(embed)
+        let msg = ("오류 : 1부터 100사이의 **정수**만 입력해줘!")
+        return message.reply(msg)
     }
 }
