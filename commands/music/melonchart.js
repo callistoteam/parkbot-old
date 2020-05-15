@@ -6,7 +6,7 @@ module.exports = {
     aliases: ["멜론차트", "melonchart"],
     category: "music",
     description: "멜론차트를 불러옵니다",
-    run: async (client, Party, message, embed, youtube) => {
+    run: async (client, Party, message, embed) => {
         const m = await message.channel.send("<a:loadingforpark:702385005590085632> 잠시만 기다려주세요").then(async msg => {
             embed.setColor("RANDOM")
             embed.setTitle(`멜론차트`)

@@ -39,7 +39,7 @@ module.exports = {
     category: "Parkbot - 공원",
     aliases: ["state", "status"],
     description: "파크봇의 상태를 확인합니다",
-    run: async (client, Party, message, embed, youtube) => {
+    run: async (client, Party, message, embed) => {
         var osu = require('node-os-utils')
         var cpu = osu.cpu
         const m = await message.channel.send("<a:loadingforpark:702385005590085632> 측정중...").then(async msg => {

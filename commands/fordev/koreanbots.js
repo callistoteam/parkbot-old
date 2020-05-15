@@ -7,7 +7,7 @@ module.exports = {
     category: "fordev",
     description: "post servercount",
     usage: "",
-    run: async (client, music, message, embed, youtube, args, replaceAll) => {
+    run: async (client, music, message) => {
         if (owners.includes(message.author.id) === false) return message.channel.send(":x: 권한없음")
         const headers = {
             "Content-Type": "application/json",

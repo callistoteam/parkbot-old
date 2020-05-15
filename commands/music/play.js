@@ -11,7 +11,7 @@ module.exports = {
     category: "music",
     description: "노래를 재생목록에 추가합니다. 유튜브 URL과 검색어를 지원합니다.",
     usage: "<곡명>",
-    run:async (client, Party, message, embed, youtube) => {
+    run:async (client, Party, message, embed) => {
         if(!message.member.voice.channel) {
             embed.addField('음성 채널에 들어가주세요', '먼저 음성채널에 들어가렴')
             return message.channel.send(embed)

@@ -16,7 +16,7 @@ module.exports = {
     category: "music",
     description: "가사를 불러옵니다",
     usage: "<제목>",
-    run: async (client, Party, message, embed, youtube) => {
+    run: async (client, Party, message) => {
         if(!message.data.args) return message.reply("곡명을 입력해줘!")
         try{
             const m = await message.channel.send("<a:loadingforpark:702385005590085632> 검색중입니다").then(async msg => {

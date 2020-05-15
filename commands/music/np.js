@@ -3,7 +3,7 @@ module.exports = {
     aliases: ["np", "ㅞ", "지금"],
     category: "music",
     description: "현재 플레이중인 곡의 정보를 불러옵니다!",
-    run: async (client, Party, message, embed, youtube) => {
+    run: async (client, Party, message, embed) => {
     if(!Party.getQueue(message.guild.id)||Party.getQueue(message.guild.id).length == 0) {
         embed.addField('재생중인 노래가 없습니다', '이 서버에서 플레이중인 노래는 없어!')
         return message.channel.send(embed)
