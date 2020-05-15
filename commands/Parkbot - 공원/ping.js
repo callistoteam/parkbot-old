@@ -4,7 +4,7 @@ const { displayname } = require("../../config")
 module.exports = {
     name: "ping",
     aliases: ["pong", "핑", "ㅔㅑㅜㅎ"],
-    category: "park - 공원",
+    category: "Parkbot - 공원",
     description: "봇의 지연시간 측정",
     usage: "",
     run: async (client, music, message, embed, youtube, args) => {

@@ -50,10 +50,10 @@ async function play(client, Party, message, embed, youtube, watchv) {
 module.exports = {
     name: "hangang",
     aliases: ["한강"],
-    category: "park - 공원",
+    category: "Parkbot - 공원",
     description: "한강 온도 => 노래 추천",
     run: async (client, Party, message, embed, youtube) => {
-        if (owner.includes(message.author.id) === false) return message.channel.send(":x: 해당 커맨드는 완성되었지만 아직 정식 이용이 불가능합니다. 파크봇 프리미엄을 구매하시면 이용하실 수 있습니다. \n > https://www.patreon.com/yoruroong")
+        if (owner.includes(message.author.id) === false) return message.channel.send(":x: 해당 커맨드는 완성되었지만 아직 이용이 불가능합니다. 파크봇 프리미엄을 구매하시면 이용하실 수 있습니다. \n > https://www.patreon.com/yoruroong")
         require("node-fetch")("http://hangang.dkserver.wo.tc/").then(r => r.json()).then(js => {
             const dg = js.temp
             if(dg < 3) {
@@ -80,6 +80,7 @@ module.exports = {
             if(dg < 27) {
                 return play(client, Party, message, embed, youtube, yoruarr[7])
             }
+            return play(client, Party, message, embed, youtube, "j2Udybhper4")
         })
     }
 }

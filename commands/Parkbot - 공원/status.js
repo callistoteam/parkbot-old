@@ -36,7 +36,7 @@ function getLogfileSize() {
 
 module.exports = {
     name: "상태",
-    category: "park - 공원",
+    category: "Parkbot - 공원",
     aliases: ["state", "status"],
     description: "파크봇의 상태를 확인합니다",
     run: async (client, Party, message, embed, youtube) => {
@@ -56,6 +56,8 @@ module.exports = {
                 embed.addField("LOG FILE SIZE", getLogfileSize())
                 embed.addField("UPTIME", yoruyoru(client))
                 embed.addField("PING", `${Math.round(client.ws.ping)}ms`)
+                embed.addField("GUILD SIZE", client.guilds.cache.size)
+                embed.addField("USERS", eval(client.guilds.cache.map(g => g.memberCount).join("+"))                )
                 embed.setTitle("파크봇 상태")
                 msg.edit("✅측정완료")
                 msg.edit(embed)
