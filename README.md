@@ -18,7 +18,7 @@
 
 
 ## Contact
-Discord: `Yoru#0002`
+Discord: `누룽지#0002`
 
 [Team.Callisto](https://discord.gg/TbEtRFU)
 
