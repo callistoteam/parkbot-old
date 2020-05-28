@@ -55,19 +55,19 @@ module.exports = {
     category: "music",
     description: "노래를 재생목록에 추가합니다. 유튜브 URL과 검색어를 지원합니다.",
     usage: "<곡명>",
-    run:async (client, Party, message, embed) => {
-            if(message.data.args.indexOf(".txt") != -1) {
-                try {
-                    var array = fs.readFileSync(`./playlists/${message.data.args}`).toString().split("\n");
-                    for(i in array) {
-                        play(client, Party, message, embed, yts, array[i])
-                    }
-                    return
-                } catch(e) {
-                    console.log(e)
-                    return message.channel.send("없는 플레이리스트")
+    run: async (client, Party, message, embed) => {
+        if(message.data.args.indexOf(".txt") != -1) {
+            try {
+                var array = fs.readFileSync(`./playlists/${message.data.args}`).toString().split("\n");
+                for(i in array) {
+                    play(client, Party, message, embed, yts, array[i])
                 }
+                return
+            } catch(e) {
+                console.log(e)
+                return message.channel.send("없는 플레이리스트")
             }
-            play(client, Party, message, embed, yts, message.data.args)
+        }
+        play(client, Party, message, embed, yts, message.data.args)
     }
 }
