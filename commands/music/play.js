@@ -30,6 +30,9 @@ async function play(client, Party, message, embed, youtube, watchv) {
                 info = r.videos[0].title
                 msg.edit(`:musical_note: \`${info}\`${hangul.josa(info, '을를')} 재생목록에 대기시켰어! ${Party.getQueue(message.guild.id).length == 1 ? '바로 재생할게!' : '신청곡 앞에 ' + Number(Party.getQueue(message.guild.id).length - 2) + ' 개의 노래가 대기열 대기하고 있어! 좀만 기다려주라구!'}`)
                 if(Party.getGuild(message.guild.id).playing === false) {
+                    if(message.guild.region == "south-korea") {
+                        message.reply("만약 음악이 끊긴다면 서버 위치 JAPAN으로 바꿔봐!")
+                    }
                     Party.startStream(message.guild.id)
                 }
 
