@@ -48,7 +48,7 @@ async function play(client, Party, message, embed, youtube, watchv) {
         })
     })
 }
-  
+
 module.exports = {
     name: "play",
     aliases: ["p", "ㅔㅣ묘", "재생"],

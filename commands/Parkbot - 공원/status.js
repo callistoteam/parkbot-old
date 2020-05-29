@@ -45,9 +45,12 @@ module.exports = {
         const m = await message.channel.send("<a:loadingforpark:702385005590085632> 측정중...").then(async msg => {
             cpu.usage().then(cpuPercentage => {
                 let realcpu=Math.round(cpuPercentage)
-                const cpuIndex = Math.round(realcpu / 10)
-                cpubar="■".repeat(cpuIndex) + "□".repeat(10 - cpuIndex);
+                // const cpuIndex = Math.round(realcpu / 10)
+                // cpubar="■".repeat(cpuIndex) + "□".repeat(10 - cpuIndex);
                 embed.setColor("RANDOM")
+                // embed.setDescription(`🖥️OS: \`${osName()}\`\n<:cpu:715732506078478337>CPU USAGE: \`${realcpu}\`\n🏓PING: \`${Math.round(client.ws.ping)}\`ms`)
+                embed.setDescription(`🖥️OS: \`${osName()}\`\n<:cpu:715732506078478337>CPU USAGE: \`${realcpu}\`\nRAM USAGE: \`${hostMem().used} / ${hostMem().total}\`\n📰LOG: ${getLogfileSize()}\n🏓PING: \`${Math.round(client.ws.ping)}\`ms`)
+                /*
                 embed.addField("OS", osName())
                 embed.addField("CPU NAME", osu.cpu.model())
                 embed.addField("CPU USAGE", `${cpubar}(${cpuPercentage}%)`)
@@ -57,7 +60,8 @@ module.exports = {
                 embed.addField("UPTIME", yoruyoru(client))
                 embed.addField("PING", `${Math.round(client.ws.ping)}ms`)
                 embed.addField("GUILD SIZE", client.guilds.cache.size)
-                embed.addField("USERS", eval(client.guilds.cache.map(g => g.memberCount).join("+"))                )
+                embed.addField("USERS", eval(client.guilds.cache.map(g => g.memberCount).join("+")))
+                */
                 embed.setTitle("파크봇 상태")
                 msg.edit("✅측정완료")
                 msg.edit(embed)
