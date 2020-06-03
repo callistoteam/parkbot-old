@@ -32,6 +32,6 @@
     "whatap": "^0.4.15",
     "youtube-thumbnail": "^1.3.0",
     "yt-search": "^1.1.2",
-    "ytdl-core": "^2.1.4"
+    "ytdl-core": "^3.0.0"
   }
 }
