@@ -23,7 +23,11 @@ module.exports = {
                 const korean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/
                 if(korean.test(message.data.args) === false){
                     var lyrics = await solenolyrics.requestLyricsFor(message.data.args)
-                    message.author.send(`\`\`\`${lyrics.substr(0, 1993)}\`\`\``)
+                    try{
+                        message.author.send(`\`\`\`${lyrics.substr(0, 1993)}\`\`\``)
+                    } catch {
+                        return msg.edit(`<@${message.author.id}>, 가사를 찾을 수 없어..`)
+                    }
                     msg.edit(`<@${message.author.id}>, DM을 확인해주세요`)
                 } else{
                     msg.edit(`<@${message.author.id}>, 한국어 검색을 지원하지 않아! 영어로 입력해줘!`)
