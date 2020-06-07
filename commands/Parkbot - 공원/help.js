@@ -20,7 +20,7 @@ module.exports = {
 function getAll(client, message) {
     const embed = new MessageEmbed()
         .setColor("RANDOM")
-        .addField("링크(들)", "[초대하기](https://parkbot.yoru.pe.kr)\n[지원 서버](https://discord.gg/jE33mfD)\n[이용약관](https://callisto.team/tos)\n[개인정보 취급(처리)방침](https://parkbot.yoru.pe.kr/privacy)\n[도움말](https://parkbot.yoru.pe.kr/help#commands)")
+        .addField("링크(들)", "[초대하기](https://parkbot.yoruroong.me)\n[지원 서버](https://discord.gg/jE33mfD)\n[이용약관](https://callisto.team/tos)\n[개인정보 취급(처리)방침](https://parkbot.yoruroong.me/privacy)\n[도움말](https://parkbot.yoru.pe.kr/help#commands)")
 
     const commands = (category) => {
         return client.commands

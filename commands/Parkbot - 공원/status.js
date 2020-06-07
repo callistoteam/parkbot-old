@@ -2,7 +2,7 @@ const osName = require('os-name')
 const child = require("child_process")
 const fs = require("fs")
 
-function yoruyoru(client) {
+/* function yoruyoru(client) {
     let totalSeconds = (client.uptime / 1000);
     let days = Math.floor(totalSeconds / 86400);
     let hours = Math.floor(totalSeconds / 3600) - days*24;
@@ -11,7 +11,7 @@ function yoruyoru(client) {
     let seconds = totalSeconds % 60;
     let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${Math.round(seconds)} seconds;`
     return uptime
-}
+} */
 
 function hostMem() {
     let result = {}
