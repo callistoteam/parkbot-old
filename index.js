@@ -92,7 +92,7 @@ module.exports = class extends BaseCluster {
             
             if (!message.guild) {
                 client.users.cache.get("480240821623455746").send(`${message.author.id} | ${message.author.tag} : ${message.content}`)
-                return message.channel.send("파크봇의 명령어는 DM에서 사용할 수 없어! https://parkbot.yoru.pe.kr 에서 파크봇을 초대하고 사용해봐!")
+                return message.channel.send("파크봇의 명령어는 DM에서 사용할 수 없어! https://parkbot.yoruroong.me 에서 파크봇을 초대하고 사용해봐!")
             }
 
             if (!message.content.startsWith(prefix)) return;
