@@ -7,6 +7,7 @@ const music = require('./music')
 const yt = require('simple-youtube-api')
 const youtube = require('yt-search')
 const prefix = config.prefix
+const blacklist = config.blacklist
 
 function replaceAll(str, searchStr, replaceStr) {
     return str.split(searchStr).join(replaceStr);
@@ -98,6 +99,8 @@ module.exports = class extends BaseCluster {
             if (!message.content.startsWith(prefix)) return;
             const owners = config.owner
             if (!message.member) message.member = await message.guild.fetchMember(message);
+
+            if (JSON.parse(blacklist)[message.author.id]) return message.channel.send(`블랙리스트 유저. 사유 : ${JSON.parse(blacklist)[message.author.id]}`)
 
             message.data = {
                 raw: message.content,

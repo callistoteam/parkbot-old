@@ -7,6 +7,7 @@ module.exports.owner = [""]
 module.exports.koreanbotsToken = ""
 module.exports.displayname = "BOT's NAME"
 module.exports.noLog = [""]
+module.exports.blacklist = "{}"
 /* module.exports.DBUser = ""
 module.exports.DBPassword = ""
 module.exports.DBName = "" */
