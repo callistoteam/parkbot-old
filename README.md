@@ -25,4 +25,4 @@ Discord: `Yoru#0002`
 [Mail](mailto:yoru@outlook.kr)
 
 ### Developer
-[Yoru](https://yoru.pe.kr), [wonderlandpark](http://dev.wonderbot.xyz)
+[Yoru](https://yoru.ml), [wonderlandpark](http://wonder.im)
